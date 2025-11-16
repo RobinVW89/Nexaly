@@ -90,7 +90,8 @@
       color: var(--primary);
       font-size: 0.85rem;
       font-weight: 500;
-      margin-left: 1rem;
+      margin-left: auto;
+      margin-right: 2rem;
       white-space: nowrap;
     }
 
@@ -336,6 +337,26 @@
       gap: 2rem;
       align-items: center;
       justify-items: center;
+    }
+
+    .brand-item {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 0.8rem 1.2rem;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .brand-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      color: var(--primary);
     }
 
     .brand-logo {
@@ -927,7 +948,7 @@
       </a>
 
       <div class="header-address">
-        89250 Beaumont, France
+        contact@conseilfiscalauto.com
       </div>
 
       <button class="nav-toggle" aria-label="Ouvrir le menu">
@@ -979,8 +1000,8 @@
 
             <div id="accueil-illustration">
         <img 
-          src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80" 
-          alt="Mercedes professionnelle moderne"
+          src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80" 
+          alt="Audi e-tron professionnelle"
           loading="lazy"
         />
       </div>
@@ -989,16 +1010,16 @@
       <div class="brands-section">
         <p class="brands-title">Nous travaillons avec toutes les marques généralistes</p>
         <div class="brands-grid">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/audi/audi-original.svg" alt="Audi" class="brand-logo" onerror="this.style.display='none'" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Mercedes" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Volkswagen_logo_2019.svg" alt="Volkswagen" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/fr/f/f7/Renault_2015.svg" alt="Renault" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Peugeot_logo.svg" alt="Peugeot" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Citroën_logo.svg" alt="Citroën" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ford_logo_flat.svg" alt="Ford" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Opel-Logo_2017.svg" alt="Opel" class="brand-logo" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Toyota_Logo.svg" alt="Toyota" class="brand-logo" />
+          <div class="brand-item">🅰️ Audi</div>
+          <div class="brand-item">🔵 BMW</div>
+          <div class="brand-item">⭐ Mercedes</div>
+          <div class="brand-item">🚗 Volkswagen</div>
+          <div class="brand-item">🔶 Renault</div>
+          <div class="brand-item">🦁 Peugeot</div>
+          <div class="brand-item">🔰 Citroën</div>
+          <div class="brand-item">🔷 Ford</div>
+          <div class="brand-item">⚡ Opel</div>
+          <div class="brand-item">🔴 Toyota</div>
         </div>
       </div>
     </section>
