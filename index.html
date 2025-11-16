@@ -333,12 +333,14 @@
 
     .brands-grid {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap;
+      justify-content: space-between;
       align-items: center;
-      gap: 3rem;
-      max-width: 1000px;
+      gap: 2rem;
+      max-width: 100%;
       margin: 0 auto;
+      overflow-x: auto;
+      padding: 1rem 0;
     }
 
     .brand-logo {
