@@ -86,6 +86,14 @@
       object-fit: contain;
     }
 
+    .header-address {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-left: 1rem;
+      white-space: nowrap;
+    }
+
     nav ul {
       display: flex;
       gap: 2rem;
@@ -300,6 +308,50 @@
       color: var(--accent);
       font-weight: bold;
       font-size: 1.2rem;
+    }
+
+    /* ====== BRANDS SECTION ====== */
+    .brands-section {
+      margin-top: 4rem;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .brands-title {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 2rem;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      max-width: 100px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+
+    .brand-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.1);
     }
 
     /* ====== SECTION SERVICES ====== */
@@ -795,6 +847,10 @@
         grid-template-columns: 1fr;
       }
 
+      .header-address {
+        display: none;
+      }
+
       nav ul {
         position: absolute;
         top: 70px;
@@ -870,6 +926,10 @@
         <img src="public/nexaly_logo_transparent.png" alt="Nexaly logo" class="logo-img" />
       </a>
 
+      <div class="header-address">
+        89250 Beaumont, France
+      </div>
+
       <button class="nav-toggle" aria-label="Ouvrir le menu">
         ☰
       </button>
@@ -919,10 +979,27 @@
 
             <div id="accueil-illustration">
         <img 
-          src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80" 
-          alt="Flotte de véhicules professionnels modernes"
+          src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80" 
+          alt="Mercedes professionnelle moderne"
           loading="lazy"
         />
+      </div>
+
+      <!-- Logos des marques -->
+      <div class="brands-section">
+        <p class="brands-title">Nous travaillons avec toutes les marques généralistes</p>
+        <div class="brands-grid">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/audi/audi-original.svg" alt="Audi" class="brand-logo" onerror="this.style.display='none'" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Mercedes" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Volkswagen_logo_2019.svg" alt="Volkswagen" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/fr/f/f7/Renault_2015.svg" alt="Renault" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Peugeot_logo.svg" alt="Peugeot" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Citroën_logo.svg" alt="Citroën" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ford_logo_flat.svg" alt="Ford" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Opel-Logo_2017.svg" alt="Opel" class="brand-logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Toyota_Logo.svg" alt="Toyota" class="brand-logo" />
+        </div>
       </div>
     </section>
     </section>
