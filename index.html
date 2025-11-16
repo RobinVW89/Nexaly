@@ -700,6 +700,66 @@
       font-weight: 600;
     }
 
+    /* ====== RESSOURCES ====== */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .resource-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .resource-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .resource-card h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .resource-card p {
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      font-size: 0.95rem;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .resource-link:hover {
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+
     /* ====== FOOTER ====== */
     footer {
       background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
@@ -1075,6 +1135,106 @@
               si votre projet le nécessite.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION RESSOURCES -->
+    <section id="ressources">
+      <h2>Ressources utiles</h2>
+      <p class="section-subtitle">
+        Liens officiels et outils pour calculer vos coûts et comprendre la réglementation.
+      </p>
+
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">🧮</div>
+          <h3>Simulateur Carte Grise</h3>
+          <p>
+            Calculez le coût de votre carte grise avec le simulateur officiel du gouvernement. 
+            Essentiel pour estimer vos frais d'immatriculation.
+          </p>
+          <a href="https://www.service-public.fr/simulateur/calcul/cout-certificat-immatriculation" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="resource-link">
+            Accéder au simulateur →
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">📊</div>
+          <h3>Barème TVS 2025</h3>
+          <p>
+            Consultez les barèmes officiels de la Taxe sur les Véhicules de Société 
+            mis à jour pour l'année en cours sur le site des impôts.
+          </p>
+          <a href="https://www.impots.gouv.fr/portail/professionnel/taxe-sur-les-vehicules-de-societes-tvs" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="resource-link">
+            Voir les barèmes TVS →
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">⚖️</div>
+          <h3>Code Général des Impôts</h3>
+          <p>
+            Articles 1010 et suivants du CGI relatifs aux taxes sur les véhicules. 
+            Textes de loi officiels sur Légifrance.
+          </p>
+          <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069577/LEGISCTA000006179962/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="resource-link">
+            Consulter le CGI →
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">🔋</div>
+          <h3>Bonus Écologique</h3>
+          <p>
+            Montants et conditions du bonus écologique pour l'acquisition de véhicules 
+            peu polluants (électriques, hybrides rechargeables).
+          </p>
+          <a href="https://www.service-public.fr/particuliers/vosdroits/F34014" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="resource-link">
+            Voir les aides →
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">📄</div>
+          <h3>Amortissements Déductibles</h3>
+          <p>
+            Règles fiscales sur les amortissements des véhicules de tourisme 
+            (Article 39-4 du CGI). Limites et plafonds.
+          </p>
+          <a href="https://bofip.impots.gouv.fr/bofip/4671-PGP.html/identifiant%3DBOI-BIC-AMT-20-40-10-20120912" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="resource-link">
+            Lire le BOFiP →
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">🚗</div>
+          <h3>WLTP & Émissions CO₂</h3>
+          <p>
+            Base de données officielle des consommations et émissions des véhicules 
+            selon la norme WLTP (ADEME).
+          </p>
+          <a href="https://carlabelling.ademe.fr/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="resource-link">
+            Consulter Car Labelling →
+          </a>
         </div>
       </div>
     </section>
