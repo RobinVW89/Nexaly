@@ -95,6 +95,17 @@
       white-space: nowrap;
     }
 
+    .header-address a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .header-address a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
     nav ul {
       display: flex;
       gap: 2rem;
@@ -969,7 +980,7 @@
       </a>
 
       <div class="header-address">
-        contact@conseilfiscalauto.com
+        <a href="mailto:contact@conseilfiscalauto.com">contact@conseilfiscalauto.com</a>
       </div>
 
       <button class="nav-toggle" aria-label="Ouvrir le menu">
