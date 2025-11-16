@@ -262,12 +262,16 @@
       background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(15, 58, 94, 0.05) 100%);
       border: 2px solid var(--border);
       border-radius: 16px;
-      padding: 3rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
       min-height: 350px;
-      text-align: center;
+      position: relative;
+    }
+
+    #accueil-illustration img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     #accueil-illustration h2 {
@@ -478,6 +482,72 @@
     }
 
     /* ====== BLOG ====== */
+    .blog-hero {
+      width: 100%;
+      height: 250px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .blog-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 58, 94, 0.9) 0%, transparent 100%);
+      padding: 2rem;
+      color: white;
+    }
+
+    .blog-hero-overlay h3 {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .blog-hero {
+      width: 100%;
+      height: 250px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .blog-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 58, 94, 0.9) 0%, transparent 100%);
+      padding: 2rem;
+      color: white;
+    }
+
+    .blog-hero-overlay h3 {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -787,20 +857,14 @@
         </div>
       </div>
 
-      <div id="accueil-illustration">
-        <div>
-          <h2>Audit & stratégie sur-mesure</h2>
-          <p style="margin-bottom: 0.75rem;">
-            Nexaly vous aide à :
-          </p>
-          <ul>
-            <li>Analyser vos coûts actuels (par véhicule / par collaborateur)</li>
-            <li>Comparer thermique, hybride, électrique et fiscalité associée</li>
-            <li>Optimiser vos contrats LLD/LOA et durées (24/36/48 mois)</li>
-            <li>Préparer un plan d’actions chiffré et argumenté</li>
-          </ul>
-        </div>
+            <div id="accueil-illustration">
+        <img 
+          src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80" 
+          alt="Flotte de véhicules professionnels modernes"
+          loading="lazy"
+        />
       </div>
+    </section>
     </section>
 
     <!-- SECTION SERVICES (RÉSUMÉ) -->
@@ -850,6 +914,17 @@
       <p class="section-subtitle">
         Restez informé des dernières évolutions fiscales et découvrez nos conseils pour optimiser votre parc automobile.
       </p>
+
+      <div class="blog-hero">
+        <img 
+          src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80" 
+          alt="Véhicules électriques en charge"
+          loading="lazy"
+        />
+        <div class="blog-hero-overlay">
+          <h3>Fiscalité automobile 2025</h3>
+        </div>
+      </div>
 
       <div class="blog-grid">
         <!-- Article 1 -->
