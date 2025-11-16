@@ -477,6 +477,159 @@
       font-weight: 500;
     }
 
+    /* ====== BLOG ====== */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .blog-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+
+    .blog-date {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .blog-category {
+      background: var(--accent);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .blog-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .blog-card p {
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      background: var(--light);
+      color: var(--primary);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+    }
+
+    /* ====== FAQ ====== */
+    .faq-container {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--light);
+    }
+
+    .faq-icon {
+      font-size: 1.8rem;
+      color: var(--accent);
+      font-weight: 300;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+
+    .faq-answer p {
+      padding: 0 1.5rem 1.5rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .faq-answer strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
     /* ====== FOOTER ====== */
     footer {
       background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
@@ -595,6 +748,7 @@
         <ul id="nav-menu">
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -686,6 +840,166 @@
             avec les loueurs, concessionnaires ou financeurs, avec des bases
             chiffrées et comparatives.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION BLOG -->
+    <section id="blog">
+      <h2>Actualités & Conseils</h2>
+      <p class="section-subtitle">
+        Restez informé des dernières évolutions fiscales et découvrez nos conseils pour optimiser votre parc automobile.
+      </p>
+
+      <div class="blog-grid">
+        <!-- Article 1 -->
+        <article class="blog-card">
+          <div class="blog-card-header">
+            <span class="blog-date">15 novembre 2025</span>
+            <span class="blog-category">Fiscalité</span>
+          </div>
+          <h3>TVS 2025 : Ce qui change pour votre entreprise</h3>
+          <p>
+            La Taxe sur les Véhicules de Société évolue encore en 2025. Découvrez les nouveaux barèmes CO₂, 
+            les véhicules exonérés et comment anticiper ces coûts dans votre budget automobile.
+          </p>
+          <div class="blog-tags">
+            <span class="tag">TVS</span>
+            <span class="tag">Réglementation</span>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card">
+          <div class="blog-card-header">
+            <span class="blog-date">8 novembre 2025</span>
+            <span class="blog-category">Stratégie</span>
+          </div>
+          <h3>Électrique vs Hybride : Quel choix fiscal en 2025 ?</h3>
+          <p>
+            Entre amortissements déductibles, bonus écologique et coûts d'usage, quelle motorisation est réellement 
+            la plus avantageuse pour votre activité ? Analyse comparative avec exemples chiffrés.
+          </p>
+          <div class="blog-tags">
+            <span class="tag">Électrique</span>
+            <span class="tag">Hybride</span>
+            <span class="tag">ROI</span>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card">
+          <div class="blog-card-header">
+            <span class="blog-date">1 novembre 2025</span>
+            <span class="blog-category">Optimisation</span>
+          </div>
+          <h3>LLD ou LOA : 5 critères pour bien choisir</h3>
+          <p>
+            Location Longue Durée ou Location avec Option d'Achat ? Au-delà des aspects financiers, 
+            découvrez les implications fiscales, comptables et pratiques pour votre entreprise.
+          </p>
+          <div class="blog-tags">
+            <span class="tag">LLD</span>
+            <span class="tag">LOA</span>
+            <span class="tag">Financement</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION FAQ -->
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+      <p class="section-subtitle">
+        Retrouvez les réponses aux questions les plus courantes sur nos services et la fiscalité automobile.
+      </p>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quels types d'entreprises accompagnez-vous ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Nous accompagnons les TPE, PME, artisans, commerciaux, professions libérales et 
+              dirigeants qui utilisent des véhicules dans le cadre de leur activité professionnelle. 
+              Que vous ayez 1 ou 50+ véhicules, nous adaptons nos conseils à votre situation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Comment se déroule un premier rendez-vous ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Le premier échange est gratuit et dure environ 30 minutes. Nous analysons votre situation actuelle, 
+              vos projets de renouvellement et identifions les opportunités d'optimisation. 
+              Vous recevez ensuite une proposition d'accompagnement adaptée à vos besoins.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quelle est la différence entre LLD et LOA ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              La <strong>LLD (Location Longue Durée)</strong> est une location pure sans option d'achat, 
+              idéale pour maîtriser ses coûts et renouveler régulièrement. La <strong>LOA (Location avec Option d'Achat)</strong> 
+              vous permet de devenir propriétaire en fin de contrat. Chaque formule a des implications fiscales 
+              et comptables différentes que nous analysons ensemble.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Faut-il privilégier l'électrique en 2025 ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Cela dépend de votre usage, kilométrage annuel et infrastructure de recharge. 
+              L'électrique offre des avantages fiscaux importants (amortissements, TVS réduite) 
+              mais nécessite un investissement initial plus élevé. Nous réalisons une analyse 
+              comparative précise en fonction de votre situation réelle.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Combien coûtent vos services ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Nos honoraires dépendent de la taille de votre parc et de la complexité de l'accompagnement. 
+              Un audit simple peut démarrer à partir de quelques centaines d'euros, tandis qu'un accompagnement 
+              stratégique sur plusieurs années est facturé au forfait ou à la mission. 
+              Nous vous présentons toujours un devis clair avant toute intervention.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Intervenez-vous partout en France ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Oui, nous intervenons sur toute la France. La plupart de nos échanges se font en visioconférence, 
+              mais nous pouvons nous déplacer pour des audits terrain ou des réunions stratégiques 
+              si votre projet le nécessite.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -900,6 +1214,24 @@
       card.style.transform = 'translateY(20px)';
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(card);
+    });
+
+    // FAQ Accordéon
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Fermer tous les autres items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Ouvrir celui-ci si il n'était pas déjà ouvert
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
     });
   </script>
 
