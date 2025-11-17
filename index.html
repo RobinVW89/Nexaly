@@ -1229,18 +1229,24 @@
       display: none;
     }
 
-    /* ====== VIDEO HERO ====== */
+    /* ====== VIDEO HERO (YouTube Embed) ====== */
     #hero-video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
       z-index: 0;
       opacity: 0.25;
       pointer-events: none;
       background: #000;
+      border: none;
+    }
+
+    /* Ajustement pour l'iframe YouTube */
+    #hero-video iframe {
+      width: 100%;
+      height: 100%;
     }
 
     /* Debug - supprimer après test */
@@ -1434,10 +1440,14 @@
     <!-- SECTION ACCUEIL -->
     <section id="accueil">
       <!-- Video Hero Background -->
-      <video id="hero-video" autoplay muted loop playsinline preload="auto">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-car-driving-on-the-road-34565-large.mp4" type="video/mp4">
-        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-      </video>
+      <iframe 
+        id="hero-video" 
+        src="https://www.youtube.com/embed/KaLISUzTs28?autoplay=1&mute=1&loop=1&playlist=KaLISUzTs28&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.25; pointer-events: none; background: #000;">
+      </iframe>
       
       <div id="accueil-text">
         <div class="pill">
