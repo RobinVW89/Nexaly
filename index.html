@@ -1238,8 +1238,14 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
-      opacity: 0.15;
+      opacity: 0.25;
       pointer-events: none;
+      background: #000;
+    }
+
+    /* Debug - supprimer après test */
+    #hero-video:not([src]) {
+      background: linear-gradient(45deg, rgba(0,212,255,0.1), rgba(15,58,94,0.1));
     }
 
     #accueil-text, #accueil-illustration {
@@ -1428,8 +1434,9 @@
     <!-- SECTION ACCUEIL -->
     <section id="accueil">
       <!-- Video Hero Background -->
-      <video id="hero-video" autoplay muted loop playsinline>
-        <source src="https://cdn.coverr.co/videos/coverr-modern-car-dashboard-7413/1080p.mp4" type="video/mp4">
+      <video id="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-car-driving-on-the-road-34565-large.mp4" type="video/mp4">
+        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
       </video>
       
       <div id="accueil-text">
