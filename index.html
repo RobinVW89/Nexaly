@@ -2181,20 +2181,110 @@
     const chatbotMessages = document.getElementById('chatbot-messages');
 
     const botResponses = {
+      // Salutations
       'bonjour': 'Bonjour ! Comment puis-je vous aider avec votre fiscalité automobile ?',
       'hello': 'Bonjour ! Comment puis-je vous aider avec votre fiscalité automobile ?',
-      'prix': 'Pour un devis personnalisé, veuillez nous contacter via le formulaire. Nos tarifs dépendent de la taille de votre flotte.',
-      'tarif': 'Pour un devis personnalisé, veuillez nous contacter via le formulaire. Nos tarifs dépendent de la taille de votre flotte.',
-      'lld': 'La Location Longue Durée (LLD) offre des avantages fiscaux intéressants. Consultez notre article de blog pour plus de détails !',
-      'loa': 'La Location avec Option d\'Achat (LOA) peut être avantageuse selon votre situation. Voulez-vous un audit personnalisé ?',
-      'tvs': 'La TVS 2025 a évolué ! Consultez notre guide complet dans la section Blog pour tout savoir.',
-      'électrique': 'Les véhicules électriques bénéficient d\'avantages fiscaux importants en 2025. Je peux vous en dire plus !',
-      'contact': 'Vous pouvez nous contacter au 07 44 96 36 60, via le formulaire en bas de page ou par email à contact@conseilfiscalauto.com',
-      'rendez-vous': 'Appelez-nous au 07 44 96 36 60 ou cliquez sur "📧 Prendre rendez-vous" en haut de page !',
-      'téléphone': 'Notre numéro : 07 44 96 36 60. Disponible pour répondre à vos questions sur la fiscalité automobile !',
-      'appel': 'Contactez-nous au 07 44 96 36 60 pour un échange personnalisé sur votre situation.',
-      'aide': 'Je peux vous renseigner sur : LLD/LOA, TVS 2025, véhicules électriques, nos tarifs, ou prendre rendez-vous. Que souhaitez-vous savoir ?',
-      'default': 'Je ne suis pas sûr de comprendre. Essayez : "LLD", "TVS", "électrique", "prix", "rendez-vous" ou "aide".'
+      'salut': 'Salut ! 👋 Je suis là pour répondre à vos questions sur la fiscalité auto.',
+      'bonsoir': 'Bonsoir ! Comment puis-je vous accompagner dans votre projet automobile ?',
+      'hey': 'Hey ! Que puis-je faire pour vous aujourd\'hui ?',
+      
+      // Prix et tarifs
+      'prix': 'Pour un devis personnalisé, contactez-nous au 07 44 96 36 60 ou via le formulaire. Nos tarifs dépendent de la taille de votre flotte et de vos besoins spécifiques.',
+      'tarif': 'Nos tarifs sont personnalisés selon votre situation. Appelez-nous au 07 44 96 36 60 pour un devis gratuit !',
+      'coût': 'Le coût dépend de votre parc automobile. Contactez Robin au 07 44 96 36 60 pour une estimation précise.',
+      'combien': 'Pour connaître nos tarifs adaptés à votre entreprise, appelez le 07 44 96 36 60.',
+      'devis': 'Je peux vous mettre en relation pour un devis gratuit ! Appelez le 07 44 96 36 60 ou remplissez le formulaire.',
+      'gratuit': 'Le premier échange et l\'audit initial sont gratuits ! Contactez-nous au 07 44 96 36 60.',
+      
+      // Location et financement
+      'lld': 'La Location Longue Durée (LLD) offre des avantages fiscaux intéressants : loyers déductibles, pas d\'immobilisation au bilan, maintenance incluse. Consultez notre article de blog pour plus de détails !',
+      'loa': 'La Location avec Option d\'Achat (LOA) peut être avantageuse selon votre situation : option d\'achat en fin de contrat, déduction des loyers. Voulez-vous un audit personnalisé ?',
+      'leasing': 'Le leasing (LLD ou LOA) présente de nombreux avantages fiscaux pour les professionnels. Je peux vous en dire plus sur votre situation spécifique !',
+      'crédit': 'Le crédit automobile professionnel permet d\'amortir le véhicule. Nous comparons toutes les solutions pour vous : crédit, LLD, LOA. Appelez-nous !',
+      'financement': 'Nous analysons toutes les options de financement : LLD, LOA, crédit, achat comptant. Chacune a ses avantages fiscaux. Contactez-nous pour un audit !',
+      
+      // TVS et fiscalité
+      'tvs': 'La TVS 2025 a évolué ! Les barèmes CO₂ sont plus stricts, mais les véhicules électriques restent exonérés. Consultez notre guide complet dans la section Blog.',
+      'taxe': 'La Taxe sur les Véhicules de Société (TVS) dépend des émissions CO₂ et de la puissance. Les véhicules électriques en sont exonérés. Besoin d\'un audit ?',
+      'impôt': 'Les véhicules de société génèrent plusieurs impacts fiscaux : TVS, amortissement, déduction des charges. Nous optimisons tout ça pour vous !',
+      'fiscalité': 'La fiscalité automobile est complexe : TVS, TVA récupérable, amortissement, avantage en nature... Je peux vous aider à optimiser tout ça !',
+      'amortissement': 'L\'amortissement dépend du type de véhicule et du carburant. Les véhicules électriques ont des plafonds plus avantageux (30 000€ vs 20 000€).',
+      'déduction': 'La déductibilité varie selon le carburant : 100% pour électrique/hydrogène, 80% pour essence/diesel, 50% pour GPL. Nous optimisons vos déductions !',
+      
+      // Véhicules électriques et hybrides
+      'électrique': 'Les véhicules électriques bénéficient d\'avantages fiscaux majeurs en 2025 : TVS à 0€, amortissement jusqu\'à 30 000€, bonus écologique jusqu\'à 7 000€ !',
+      'hybride': 'Les hybrides rechargeables ont des avantages fiscaux selon leur autonomie électrique. Au-delà de 50km, la TVS est réduite. Voulez-vous en savoir plus ?',
+      'ev': 'Les véhicules électriques (EV) sont exonérés de TVS et bénéficient d\'un amortissement plus avantageux. C\'est souvent le meilleur choix fiscal !',
+      'tesla': 'Tesla propose d\'excellents modèles pour les professionnels : Model 3, Model Y. Tous bénéficient des avantages fiscaux électriques. Audit ?',
+      'autonomie': 'L\'autonomie est cruciale pour les professionnels. Nous analysons vos trajets pour trouver le véhicule électrique optimal pour votre usage.',
+      'recharge': 'La recharge est un critère important. Nous vous conseillons sur les bornes et l\'infrastructure adaptée à vos besoins professionnels.',
+      'bonus': 'Le bonus écologique 2025 peut atteindre 7 000€ pour les véhicules électriques neufs sous conditions. Nous vous aidons à en bénéficier !',
+      
+      // Marques automobiles
+      'audi': 'Audi propose d\'excellents modèles électriques comme l\'e-tron et le Q4 e-tron, parfaits pour les professionnels. Besoin d\'une analyse fiscale ?',
+      'bmw': 'BMW a une belle gamme électrique : iX3, i4, iX. Nous pouvons analyser les avantages fiscaux pour votre entreprise.',
+      'mercedes': 'Mercedes EQC, EQA, EQB : d\'excellents véhicules professionnels avec de beaux avantages fiscaux. Audit personnalisé ?',
+      'volkswagen': 'Volkswagen ID.3, ID.4, ID.5 : un bon rapport qualité/prix avec tous les avantages fiscaux électriques. Intéressé ?',
+      'renault': 'Renault Zoe, Megane E-Tech : des choix pertinents pour les professionnels avec des coûts maîtrisés. Analyse ?',
+      'peugeot': 'Peugeot e-208, e-2008 : compacts et fiscalement avantageux pour les professionnels. Voulez-vous en savoir plus ?',
+      'tesla': 'Tesla Model 3 et Model Y : références du marché électrique pro avec autonomie exceptionnelle. Audit fiscal ?',
+      
+      // Services Nexaly
+      'service': 'Nous proposons : Audit fiscal de votre parc, Plan stratégique 24/36/48 mois, Accompagnement négociations, Optimisation TVS. Que vous intéresse ?',
+      'audit': 'Notre audit analyse vos véhicules actuels, contrats, fiscalité et vous propose des économies concrètes. Premier échange gratuit au 07 44 96 36 60 !',
+      'conseil': 'Nexaly vous conseille sur tous les aspects : choix véhicules, financement, fiscalité, négociation avec loueurs. Appelez-nous !',
+      'optimisation': 'Nous optimisons votre fiscalité automobile : TVS, amortissements, choix de véhicules, durée de contrats. Économies garanties !',
+      'accompagnement': 'Nous vous accompagnons de A à Z : audit, stratégie, négociation, mise en place. Un seul interlocuteur pour tout gérer !',
+      'économie': 'Nos clients économisent en moyenne 15-30% sur leurs coûts automobiles. Vous voulez savoir combien vous pourriez économiser ?',
+      
+      // Types d\'entreprises
+      'tpe': 'Nexaly accompagne les TPE dès 1 véhicule ! Nous adaptons nos services à votre taille. Contactez-nous au 07 44 96 36 60.',
+      'pme': 'Nous aidons de nombreuses PME à optimiser leur parc automobile. Chaque véhicule compte ! Audit gratuit ?',
+      'artisan': 'Artisans, nous savons que chaque euro compte. Optimisons vos utilitaires et véhicules de service. Appelez-nous !',
+      'commercial': 'Commerciaux, votre véhicule est votre outil de travail. Optimisons-le fiscalement ! 07 44 96 36 60.',
+      'profession libérale': 'Professions libérales : médecins, avocats, experts-comptables... nous optimisons votre véhicule professionnel !',
+      'flotte': 'Gestion de flotte : nous analysons chaque véhicule pour maximiser vos économies. De 3 à 100+ véhicules !',
+      
+      // Contact et RDV
+      'contact': 'Contactez Robin Soyer au 07 44 96 36 60, via le formulaire en bas de page ou par email à contact@conseilfiscalauto.com',
+      'rendez-vous': 'Prenez rendez-vous : appelez le 07 44 96 36 60 ou cliquez sur "📧 Prendre rendez-vous" en haut de page !',
+      'téléphone': 'Notre numéro : 07 44 96 36 60. Robin Soyer vous répond pour toutes vos questions sur la fiscalité automobile.',
+      'appel': 'Appelez Robin au 07 44 96 36 60 pour un échange personnalisé sur votre situation. Premier contact gratuit !',
+      'email': 'Envoyez-nous un email à contact@conseilfiscalauto.com ou utilisez le formulaire en bas de page.',
+      'robin': 'Robin Soyer est le fondateur de Nexaly, expert en fiscalité automobile. Appelez-le au 07 44 96 36 60 !',
+      'auxerre': 'Nexaly est basé à Auxerre (89) mais intervient partout en France. Appelez le 07 44 96 36 60 !',
+      'où': 'Nous sommes basés à Auxerre mais intervenons dans toute la France. Appelez le 07 44 96 36 60 !',
+      'horaire': 'Contactez-nous au 07 44 96 36 60 du lundi au vendredi. Nous vous rappelons rapidement !',
+      
+      // Délais et process
+      'délai': 'Un audit prend généralement 2-3 jours. Le premier échange est immédiat ! Appelez le 07 44 96 36 60.',
+      'rapide': 'Oui, nous travaillons vite ! Premier échange sous 24h, audit sous 3 jours. Contactez-nous !',
+      'urgence': 'Besoin urgent ? Appelez directement Robin au 07 44 96 36 60 pour un traitement prioritaire.',
+      'combien de temps': 'Comptez 2-3 jours pour un audit complet. Le premier contact est immédiat ! 07 44 96 36 60.',
+      
+      // Merci et remerciements
+      'merci': 'Avec plaisir ! N\'hésitez pas si vous avez d\'autres questions. 😊',
+      'super': 'Content de vous aider ! Besoin d\'autre chose ?',
+      'ok': 'Parfait ! Une autre question ?',
+      'top': 'Ravi de vous aider ! 👍',
+      
+      // Au revoir
+      'au revoir': 'Au revoir ! N\'hésitez pas à nous contacter au 07 44 96 36 60. À bientôt !',
+      'bye': 'À bientôt ! Contactez-nous quand vous voulez au 07 44 96 36 60 ! 👋',
+      'ciao': 'Ciao ! Robin vous attend au 07 44 96 36 60 pour optimiser votre fiscalité auto !',
+      
+      // ROI
+      'roi': 'Le ROI (Retour sur Investissement) mesure la rentabilité. Nous calculons le ROI de chaque véhicule pour optimiser vos choix !',
+      'rentabilité': 'Nous analysons la rentabilité totale : coût d\'achat/location, fiscalité, maintenance, revente. Vision sur 24/36/48 mois !',
+      'économies': 'Nos clients économisent 15-30% en moyenne sur leurs coûts auto. Et vous, combien pourriez-vous économiser ? Audit gratuit !',
+      
+      // Aide et navigation
+      'aide': 'Je peux vous renseigner sur : LLD/LOA, TVS 2025, véhicules électriques, nos services, tarifs, ou prendre rendez-vous. Que souhaitez-vous savoir ?',
+      'menu': 'Voici les sujets principaux : Fiscalité (TVS, amortissement), Financement (LLD/LOA), Véhicules électriques, Nos services, Contact. Que vous intéresse ?',
+      'blog': 'Consultez notre section Blog en haut de page pour des articles détaillés sur la TVS 2025, LLD vs LOA, électrique vs hybride !',
+      
+      // Défaut
+      'default': 'Je ne suis pas sûr de comprendre. Essayez : "TVS", "électrique", "LLD", "tarifs", "audit", "rendez-vous" ou tapez "aide" pour voir tous les sujets !'
     };
 
     chatbotToggle.addEventListener('click', () => {
