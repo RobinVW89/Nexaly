@@ -431,13 +431,14 @@
       object-fit: contain;
       filter: grayscale(100%);
       opacity: 0.6;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
     }
 
     .brand-logo:hover {
-      filter: grayscale(0%);
+      filter: grayscale(0%) drop-shadow(0 8px 20px rgba(0, 212, 255, 0.4));
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1.15) rotateY(15deg);
     }
 
     /* ====== SECTION SERVICES ====== */
@@ -1188,7 +1189,7 @@
     /* ====== DARK MODE TOGGLE ====== */
     #dark-mode-toggle {
       position: fixed;
-      top: 20px;
+      top: 90px;
       right: 20px;
       width: 50px;
       height: 50px;
@@ -1232,13 +1233,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1;
-      opacity: 0.3;
+      z-index: 0;
+      opacity: 0.2;
     }
 
     #accueil {
       position: relative;
       overflow: hidden;
+    }
+
+    #accueil-text, #accueil-image {
+      position: relative;
+      z-index: 1;
     }
 
     /* ====== VEHICLE GALLERY ====== */
@@ -1368,7 +1374,7 @@
       }
 
       #dark-mode-toggle {
-        top: 10px;
+        top: 80px;
         right: 10px;
         width: 44px;
         height: 44px;
@@ -1904,7 +1910,7 @@
       
       <div class="gallery-slider">
         <div class="gallery-slide">
-          <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&h=250&fit=crop" alt="Tesla Model 3">
+          <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&h=250&fit=crop&q=80" alt="Tesla Model 3">
           <div class="gallery-slide-info">
             <h3>Tesla Model 3</h3>
             <p>100% électrique • TVS : 0€ • Bonus écologique</p>
@@ -1912,7 +1918,7 @@
         </div>
         
         <div class="gallery-slide">
-          <img src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=400&h=250&fit=crop" alt="BMW iX3">
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=250&fit=crop&q=80" alt="BMW iX3">
           <div class="gallery-slide-info">
             <h3>BMW iX3</h3>
             <p>100% électrique • TVS : 0€ • Premium</p>
@@ -1920,7 +1926,7 @@
         </div>
         
         <div class="gallery-slide">
-          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=400&h=250&fit=crop" alt="Mercedes EQC">
+          <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=250&fit=crop&q=80" alt="Mercedes EQC">
           <div class="gallery-slide-info">
             <h3>Mercedes EQC</h3>
             <p>SUV électrique • TVS : 0€ • Confort optimal</p>
@@ -1928,7 +1934,7 @@
         </div>
         
         <div class="gallery-slide">
-          <img src="https://images.unsplash.com/photo-1606016159991-4764d5227991?w=400&h=250&fit=crop" alt="Audi e-tron">
+          <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=400&h=250&fit=crop&q=80" alt="Audi e-tron">
           <div class="gallery-slide-info">
             <h3>Audi e-tron</h3>
             <p>100% électrique • TVS : 0€ • Autonomie 400km</p>
@@ -1936,7 +1942,7 @@
         </div>
         
         <div class="gallery-slide">
-          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=250&fit=crop" alt="Peugeot e-208">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=250&fit=crop&q=80" alt="Peugeot e-208">
           <div class="gallery-slide-info">
             <h3>Peugeot e-208</h3>
             <p>Citadine électrique • TVS : 0€ • Compact</p>
@@ -1944,7 +1950,7 @@
         </div>
         
         <div class="gallery-slide">
-          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=250&fit=crop" alt="Renault Zoe">
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=250&fit=crop&q=80" alt="Renault Zoe">
           <div class="gallery-slide-info">
             <h3>Renault Zoe</h3>
             <p>100% électrique • TVS : 0€ • Best-seller FR</p>
