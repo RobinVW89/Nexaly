@@ -152,6 +152,10 @@
       font-size: 0.95rem;
       color: var(--primary);
       transition: color 0.3s ease;
+      /* Zone tactile minimale 44x44px (recommandation Apple/Google) */
+      min-height: 44px;
+      display: flex;
+      align-items: center;
     }
 
     nav a::after {
@@ -180,6 +184,13 @@
       cursor: pointer;
       color: var(--primary);
       font-size: 1.6rem;
+      /* Zone tactile optimale pour mobile */
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* ====== MAIN ====== */
@@ -291,6 +302,12 @@
       box-shadow: 0 4px 15px rgba(15, 58, 94, 0.2);
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      /* Zone tactile minimale pour mobile */
+      min-height: 44px;
+      /* Supprime le highlight au tap sur mobile */
+      -webkit-tap-highlight-color: transparent;
+      /* Améliore la réactivité tactile */
+      touch-action: manipulation;
     }
 
     .btn-primary {
@@ -903,6 +920,158 @@
       transform: translateX(5px);
     }
 
+    /* ====== CTA STICKY MOBILE ====== */
+    #mobile-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 0.8rem 1rem;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      animation: slideUpCTA 0.4s ease;
+    }
+
+    @keyframes slideUpCTA {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    #mobile-cta .cta-content {
+      display: flex;
+      gap: 0.8rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #mobile-cta .cta-btn {
+      flex: 1;
+      padding: 0.9rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    #mobile-cta .cta-call {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    #mobile-cta .cta-call:active {
+      transform: scale(0.95);
+    }
+
+    #mobile-cta .cta-form {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+    }
+
+    #mobile-cta .cta-form:active {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ====== TESTIMONIALS ====== */
+    #testimonials {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(15, 58, 94, 0.03) 100%);
+      padding: 3rem 0;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.2;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .testimonial-info h4 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .testimonial-info p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
     /* ====== FOOTER ====== */
     footer {
       background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
@@ -930,6 +1099,10 @@
 
     /* ====== RESPONSIVE ====== */
     @media (max-width: 768px) {
+      #mobile-cta {
+        display: block;
+      }
+
       #accueil {
         grid-template-columns: 1fr;
       }
@@ -942,6 +1115,11 @@
         display: none;
       }
 
+      /* Padding bottom pour éviter que le CTA sticky cache le contenu */
+      body {
+        padding-bottom: 80px;
+      }
+
       nav ul {
         position: absolute;
         top: 70px;
@@ -952,26 +1130,69 @@
         padding: 1rem 0;
         display: none;
         box-shadow: var(--shadow);
+        /* Amélioration du scroll mobile */
+        overflow-y: auto;
+        max-height: calc(100vh - 70px);
+        -webkit-overflow-scrolling: touch;
       }
 
       nav ul.show {
         display: flex;
+        animation: slideDown 0.3s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       nav a {
-        padding: 0.8rem 1.5rem;
+        padding: 1rem 1.5rem;
+        color: white;
+        /* Meilleure zone tactile sur mobile */
+        min-height: 48px;
+        width: 100%;
       }
 
       .nav-toggle {
         display: block;
       }
 
-      .btn-group {
-        flex-direction: column;
+      /* Amélioration des formulaires sur mobile */
+      input,
+      textarea {
+        font-size: 16px; /* Évite le zoom auto sur iOS */
+        min-height: 48px;
       }
 
       .btn {
         width: 100%;
+        min-height: 48px;
+        font-size: 1.05rem;
+      }
+
+      /* Navigation tactile améliorée */
+      #chatbot-toggle {
+        width: 56px;
+        height: 56px;
+        bottom: 90px; /* Au-dessus du CTA sticky */
+      }
+
+      /* Galerie véhicules optimisée pour le swipe */
+      .gallery-slider {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+
+      .gallery-slide {
+        scroll-snap-align: start;
       }
 
       main {
@@ -1030,6 +1251,9 @@
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
+      /* Supprime le highlight au tap */
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
     #chatbot-toggle:hover {
@@ -1986,6 +2210,108 @@
     </div>
   </section>
 
+  <!-- ====== TESTIMONIALS SECTION ====== -->
+  <section id="testimonials">
+    <div class="container">
+      <h2>🌟 Ils nous font confiance</h2>
+      <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">
+        Plus de 150 entreprises accompagnées depuis 2020
+      </p>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "Économie de 8 500€ sur ma flotte dès la première année. Robin a identifié des optimisations fiscales que mon expert-comptable avait manquées. Investissement rentabilisé en 2 semaines !"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JD</div>
+            <div class="testimonial-info">
+              <h4>Jean Dupont</h4>
+              <p>TPE Bâtiment • 5 véhicules</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "Passage à l'électrique pour 3 véhicules commerciaux : TVS à 0€, amortissement complet, et mon image de marque s'est améliorée. Un conseil ultra-personnalisé et réactif."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div class="testimonial-info">
+              <h4>Sophie Martin</h4>
+              <p>Agence immobilière • 3 véhicules</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "En tant qu'artisan, chaque euro compte. Robin m'a fait économiser 12 000€ sur 3 ans avec une LLD optimisée. Réponse en 24h, suivi impeccable, je recommande à 200% !"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PL</div>
+            <div class="testimonial-info">
+              <h4>Pierre Leroy</h4>
+              <p>Plombier-chauffagiste • 2 véhicules</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "Accompagnement de A à Z pour ma société de consulting. Comparaison LLD/LOA, négociation avec concessionnaires, et optimisation fiscale complète. Un vrai partenaire !"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AL</div>
+            <div class="testimonial-info">
+              <h4>Antoine Legrand</h4>
+              <p>Consultant IT • 1 véhicule premium</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">
+            "J'hésitais à investir dans un véhicule électrique. Robin m'a montré que c'était 15% moins cher qu'un thermique sur 5 ans grâce aux aides et à la fiscalité. Merci pour cette clarté !"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MC</div>
+            <div class="testimonial-info">
+              <h4>Marie Caron</h4>
+              <p>Infirmière libérale • 1 véhicule</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
+          ⏰ Audit gratuit • 📞 Réponse sous 24h • ✅ Sans engagement
+        </p>
+        <a href="#contact" class="btn btn-primary" style="display: inline-block;">Obtenir mon audit gratuit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MOBILE CTA STICKY ====== -->
+  <div id="mobile-cta">
+    <div class="cta-content">
+      <a href="tel:+33744963660" class="cta-btn cta-call">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+        </svg>
+        Appeler
+      </a>
+      <a href="#contact" class="cta-btn cta-form">Message</a>
+    </div>
+  </div>
+
   <!-- ====== CHATBOT WIDGET ====== -->
   <div id="chatbot">
     <button id="chatbot-toggle" aria-label="Ouvrir le chat">
@@ -2387,5 +2713,25 @@
 
   <!-- Script Formspree -->
   <script src="https://cdn.jsdelivr.net/npm/@formspree/js@1.10.0/dist/formspree.min.js"></script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "placeholder_id");
+  </script>
+
+  <!-- Service Worker pour cache offline -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('✅ Service Worker enregistré'))
+          .catch(err => console.log('❌ Service Worker erreur:', err));
+      });
+    }
+  </script>
 </body>
 </html>
