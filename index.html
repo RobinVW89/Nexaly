@@ -238,6 +238,10 @@
       gap: 3rem;
       align-items: start;
       margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      padding: 3rem 0;
     }
 
     .pill {
@@ -1234,15 +1238,11 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
-      opacity: 0.2;
+      opacity: 0.15;
+      pointer-events: none;
     }
 
-    #accueil {
-      position: relative;
-      overflow: hidden;
-    }
-
-    #accueil-text, #accueil-image {
+    #accueil-text, #accueil-illustration {
       position: relative;
       z-index: 1;
     }
