@@ -43,14 +43,32 @@
       --border: #e2e8f0;
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.15);
+      --bg: #ffffff;
+      --bg-secondary: #f8fafc;
+    }
+
+    body.dark-mode {
+      --primary: #00d4ff;
+      --primary-light: #33ddff;
+      --accent: #0f3a5e;
+      --dark: #0a1b2e;
+      --light: #1e293b;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --border: #334155;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+      --bg: #0f172a;
+      --bg-secondary: #1e293b;
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
       color: var(--text);
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      background: var(--bg);
       min-height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     a {
@@ -382,8 +400,8 @@
 
     .brand-logo:hover {
       opacity: 1;
-      transform: scale(1.2);
-      filter: contrast(1);
+      transform: scale(1.2) rotateY(10deg);
+      filter: contrast(1) drop-shadow(0 5px 15px rgba(0,212,255,0.3));
     }
 
     .brand-item {
@@ -440,7 +458,7 @@
       padding: 2.5rem 2rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
       border: 1px solid var(--border);
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
     }
@@ -458,8 +476,8 @@
     }
 
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
       border-color: var(--accent);
     }
 
@@ -985,6 +1003,381 @@
         font-size: 1.5rem;
       }
     }
+
+    /* ====== CHATBOT WIDGET ====== */
+    #chatbot {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    #chatbot-toggle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    #chatbot-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(0, 212, 255, 0.5);
+    }
+
+    #chatbot-toggle svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    #chatbot-window {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 350px;
+      max-width: calc(100vw - 40px);
+      height: 500px;
+      background: var(--bg);
+      border-radius: 16px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    #chatbot-window.active {
+      display: flex;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #chatbot-header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 16px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #chatbot-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+
+    #chatbot-close:hover {
+      opacity: 0.7;
+    }
+
+    #chatbot-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-message {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      word-wrap: break-word;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .chat-message.bot {
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--text);
+      align-self: flex-start;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .chat-message.user {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      align-self: flex-end;
+    }
+
+    #chatbot-input-container {
+      padding: 16px;
+      border-top: 1px solid rgba(0, 212, 255, 0.2);
+      display: flex;
+      gap: 8px;
+    }
+
+    #chatbot-input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-radius: 24px;
+      background: var(--bg);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    #chatbot-input:focus {
+      border-color: var(--accent);
+    }
+
+    #chatbot-send {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    #chatbot-send:hover {
+      transform: scale(1.1);
+    }
+
+    #chatbot-send svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    /* ====== DARK MODE TOGGLE ====== */
+    #dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    #dark-mode-toggle:hover {
+      transform: rotate(15deg) scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+    }
+
+    #dark-mode-toggle svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode #dark-mode-toggle svg.sun {
+      display: none;
+    }
+
+    body:not(.dark-mode) #dark-mode-toggle svg.moon {
+      display: none;
+    }
+
+    /* ====== VIDEO HERO ====== */
+    #hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    #accueil {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ====== VEHICLE GALLERY ====== */
+    #vehicle-gallery {
+      padding: 80px 20px;
+      background: var(--bg);
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .gallery-slider {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-slider::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .gallery-slider::-webkit-scrollbar-track {
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    .gallery-slider::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    .gallery-slide {
+      min-width: 300px;
+      scroll-snap-align: center;
+      background: rgba(0, 212, 255, 0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-slide:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0, 212, 255, 0.3);
+    }
+
+    .gallery-slide img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .gallery-slide-info {
+      padding: 16px;
+    }
+
+    .gallery-slide-info h3 {
+      margin: 0 0 8px 0;
+      color: var(--text);
+    }
+
+    .gallery-slide-info p {
+      margin: 0;
+      color: var(--text);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    .gallery-nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .gallery-nav button {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .gallery-nav button:hover {
+      background: var(--accent);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* ====== CONFETTI ANIMATION ====== */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      pointer-events: none;
+      z-index: 9999;
+      animation: confetti-fall 3s linear forwards;
+    }
+
+    @keyframes confetti-fall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #chatbot-window {
+        width: calc(100vw - 40px);
+        height: 450px;
+        bottom: 90px;
+      }
+
+      #dark-mode-toggle {
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
+      }
+
+      .gallery-slide {
+        min-width: 260px;
+      }
+    }
   </style>
 
   <!-- ====== HEADER & NAVBAR ====== -->
@@ -1013,10 +1406,25 @@
     </div>
   </header>
 
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" aria-label="Activer/Désactiver le mode sombre">
+    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/>
+    </svg>
+    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"/>
+    </svg>
+  </button>
+
   <!-- ====== CONTENU PRINCIPAL ====== -->
   <main>
     <!-- SECTION ACCUEIL -->
     <section id="accueil">
+      <!-- Video Hero Background -->
+      <video id="hero-video" autoplay muted loop playsinline>
+        <source src="https://cdn.coverr.co/videos/coverr-modern-car-dashboard-7413/1080p.mp4" type="video/mp4">
+      </video>
+      
       <div id="accueil-text">
         <div class="pill">
           <span>Conseil & fiscalité automobile pour professionnels</span>
@@ -1485,6 +1893,103 @@
     </div>
   </footer>
 
+  <!-- ====== VEHICLE GALLERY SECTION ====== -->
+  <section id="vehicle-gallery">
+    <div class="gallery-container">
+      <h2>Nos Véhicules Recommandés 2025</h2>
+      <p style="text-align: center; margin-bottom: 40px; color: var(--text); opacity: 0.8;">
+        Découvrez notre sélection de véhicules optimisés fiscalement pour les professionnels
+      </p>
+      
+      <div class="gallery-slider">
+        <div class="gallery-slide">
+          <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&h=250&fit=crop" alt="Tesla Model 3">
+          <div class="gallery-slide-info">
+            <h3>Tesla Model 3</h3>
+            <p>100% électrique • TVS : 0€ • Bonus écologique</p>
+          </div>
+        </div>
+        
+        <div class="gallery-slide">
+          <img src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=400&h=250&fit=crop" alt="BMW iX3">
+          <div class="gallery-slide-info">
+            <h3>BMW iX3</h3>
+            <p>100% électrique • TVS : 0€ • Premium</p>
+          </div>
+        </div>
+        
+        <div class="gallery-slide">
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=400&h=250&fit=crop" alt="Mercedes EQC">
+          <div class="gallery-slide-info">
+            <h3>Mercedes EQC</h3>
+            <p>SUV électrique • TVS : 0€ • Confort optimal</p>
+          </div>
+        </div>
+        
+        <div class="gallery-slide">
+          <img src="https://images.unsplash.com/photo-1606016159991-4764d5227991?w=400&h=250&fit=crop" alt="Audi e-tron">
+          <div class="gallery-slide-info">
+            <h3>Audi e-tron</h3>
+            <p>100% électrique • TVS : 0€ • Autonomie 400km</p>
+          </div>
+        </div>
+        
+        <div class="gallery-slide">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=250&fit=crop" alt="Peugeot e-208">
+          <div class="gallery-slide-info">
+            <h3>Peugeot e-208</h3>
+            <p>Citadine électrique • TVS : 0€ • Compact</p>
+          </div>
+        </div>
+        
+        <div class="gallery-slide">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=250&fit=crop" alt="Renault Zoe">
+          <div class="gallery-slide-info">
+            <h3>Renault Zoe</h3>
+            <p>100% électrique • TVS : 0€ • Best-seller FR</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-nav">
+        <button id="gallery-prev" aria-label="Précédent">‹</button>
+        <button id="gallery-next" aria-label="Suivant">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CHATBOT WIDGET ====== -->
+  <div id="chatbot">
+    <button id="chatbot-toggle" aria-label="Ouvrir le chat">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 3H14C18.4183 3 22 6.58172 22 11C22 15.4183 18.4183 19 14 19V22.5C9 20.5 2 17.5 2 11C2 6.58172 5.58172 3 10 3ZM12 17H14C17.3137 17 20 14.3137 20 11C20 7.68629 17.3137 5 14 5H10C6.68629 5 4 7.68629 4 11C4 14.61 6.46208 16.9656 12 19.4798V17Z" fill="white"/>
+      </svg>
+    </button>
+    
+    <div id="chatbot-window">
+      <div id="chatbot-header">
+        <span>Assistant Nexaly 💬</span>
+        <button id="chatbot-close" aria-label="Fermer">&times;</button>
+      </div>
+      
+      <div id="chatbot-messages"></div>
+      
+      <div id="chatbot-input-container">
+        <input 
+          type="text" 
+          id="chatbot-input" 
+          placeholder="Votre question..." 
+          autocomplete="off"
+        >
+        <button id="chatbot-send" aria-label="Envoyer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 13.0001L7.5 12.0001L3 11.0001V3.00006L21 12.0001L3 21.0001V13.0001Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Navigation burger menu
     const navToggle = document.querySelector('.nav-toggle');
@@ -1628,6 +2133,136 @@
         }
       });
     });
+
+    // ====== CHATBOT ======
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotSend = document.getElementById('chatbot-send');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+
+    const botResponses = {
+      'bonjour': 'Bonjour ! Comment puis-je vous aider avec votre fiscalité automobile ?',
+      'hello': 'Bonjour ! Comment puis-je vous aider avec votre fiscalité automobile ?',
+      'prix': 'Pour un devis personnalisé, veuillez nous contacter via le formulaire. Nos tarifs dépendent de la taille de votre flotte.',
+      'tarif': 'Pour un devis personnalisé, veuillez nous contacter via le formulaire. Nos tarifs dépendent de la taille de votre flotte.',
+      'lld': 'La Location Longue Durée (LLD) offre des avantages fiscaux intéressants. Consultez notre article de blog pour plus de détails !',
+      'loa': 'La Location avec Option d\'Achat (LOA) peut être avantageuse selon votre situation. Voulez-vous un audit personnalisé ?',
+      'tvs': 'La TVS 2025 a évolué ! Consultez notre guide complet dans la section Blog pour tout savoir.',
+      'électrique': 'Les véhicules électriques bénéficient d\'avantages fiscaux importants en 2025. Je peux vous en dire plus !',
+      'contact': 'Vous pouvez nous contacter via le formulaire en bas de page ou par email à contact@conseilfiscalauto.com',
+      'rendez-vous': 'Cliquez sur "📧 Prendre rendez-vous" en haut de page pour nous envoyer un email directement !',
+      'aide': 'Je peux vous renseigner sur : LLD/LOA, TVS 2025, véhicules électriques, nos tarifs, ou prendre rendez-vous. Que souhaitez-vous savoir ?',
+      'default': 'Je ne suis pas sûr de comprendre. Essayez : "LLD", "TVS", "électrique", "prix", "rendez-vous" ou "aide".'
+    };
+
+    chatbotToggle.addEventListener('click', () => {
+      chatbotWindow.classList.toggle('active');
+      if (chatbotWindow.classList.contains('active')) {
+        createConfetti(chatbotToggle.getBoundingClientRect());
+        setTimeout(() => chatbotInput.focus(), 300);
+      }
+    });
+
+    chatbotClose.addEventListener('click', () => {
+      chatbotWindow.classList.remove('active');
+    });
+
+    function sendMessage() {
+      const message = chatbotInput.value.trim();
+      if (!message) return;
+
+      // Message utilisateur
+      addMessage(message, 'user');
+      chatbotInput.value = '';
+
+      // Réponse du bot
+      setTimeout(() => {
+        const response = getBotResponse(message);
+        addMessage(response, 'bot');
+        createConfetti(chatbotMessages.getBoundingClientRect());
+      }, 600);
+    }
+
+    function addMessage(text, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chat-message ${sender}`;
+      messageDiv.textContent = text;
+      chatbotMessages.appendChild(messageDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function getBotResponse(message) {
+      const lowerMessage = message.toLowerCase();
+      for (const [key, response] of Object.entries(botResponses)) {
+        if (lowerMessage.includes(key)) {
+          return response;
+        }
+      }
+      return botResponses['default'];
+    }
+
+    chatbotSend.addEventListener('click', sendMessage);
+    chatbotInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    // Message d'accueil du bot
+    setTimeout(() => {
+      addMessage('Bonjour ! 👋 Je suis l\'assistant Nexaly. Posez-moi vos questions sur la fiscalité automobile !', 'bot');
+    }, 1000);
+
+    // ====== DARK MODE ======
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    // Charger la préférence
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      createConfetti(darkModeToggle.getBoundingClientRect());
+      
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.removeItem('darkMode');
+      }
+    });
+
+    // ====== CONFETTI EFFECT ======
+    function createConfetti(rect) {
+      const colors = ['#00d4ff', '#0f3a5e', '#00ffaa', '#ff00ff', '#ffaa00'];
+      for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = `${rect.left + rect.width / 2}px`;
+        confetti.style.top = `${rect.top + rect.height / 2}px`;
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.transform = `translate(${(Math.random() - 0.5) * 200}px, ${(Math.random() - 0.5) * 200}px) rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 3000);
+      }
+    }
+
+    // ====== VEHICLE GALLERY ======
+    const gallerySlider = document.querySelector('.gallery-slider');
+    const prevBtn = document.getElementById('gallery-prev');
+    const nextBtn = document.getElementById('gallery-next');
+
+    if (prevBtn && nextBtn && gallerySlider) {
+      prevBtn.addEventListener('click', () => {
+        gallerySlider.scrollBy({ left: -320, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        gallerySlider.scrollBy({ left: 320, behavior: 'smooth' });
+      });
+    }
   </script>
 
   <!-- Script Formspree -->
