@@ -45,3 +45,34 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Schema.org Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nexaly",
+  "alternateName": "Conseil Fiscal Auto",
+  "url": "https://www.conseilfiscalauto.com",
+  "logo": "https://www.conseilfiscalauto.com/logo-nexaly.svg",
+  "image": "https://www.conseilfiscalauto.com/logo-nexaly.svg",
+  "description": "Conseil, audit et optimisation de la fiscalité automobile pour professionnels : TPE, PME, artisans, commerciaux, professions libérales",
+  "telephone": "+33744963660",
+  "email": "contact@conseilfiscalauto.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Beaumont",
+    "postalCode": "89250",
+    "addressCountry": "FR"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "France"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Robin Soyer"
+  },
+  "sameAs": []
+}
+</script>
