@@ -1,0 +1,18 @@
+# Robots.txt pour conseilfiscalauto.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.conseilfiscalauto.com/sitemap.xml
+
+# Bloquer les pages légales pour le crawl (mais indexables)
+User-agent: *
+Allow: /mentions-legales.html
+Allow: /politique-confidentialite.html
+Allow: /politique-cookies.html
+
+# Disallow des fichiers systèmes
+Disallow: /sw.js
+Disallow: /worker-configuration.d.ts
+Disallow: /wrangler.json
