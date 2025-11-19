@@ -16,3 +16,4 @@ Allow: /politique-cookies.html
 Disallow: /sw.js
 Disallow: /worker-configuration.d.ts
 Disallow: /wrangler.json
+# Force redeploy
