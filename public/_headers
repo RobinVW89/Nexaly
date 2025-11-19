@@ -1,6 +1,5 @@
 /robots.txt
   Content-Type: text/plain
-  X-Robots-Tag: none
 
 /sitemap*.xml
   Content-Type: application/xml
