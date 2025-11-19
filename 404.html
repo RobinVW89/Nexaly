@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable (404) - Nexaly</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #00D4FF;
+      --accent: #00FFB3;
+      --dark-bg: #0F3A5E;
+      --text-light: rgba(255, 255, 255, 0.8);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, var(--dark-bg) 0%, #1a5080 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Effets de fond animés */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -250px;
+      right: -250px;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 255, 179, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: -200px;
+      left: -200px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(30px, 30px) scale(1.1);
+      }
+    }
+
+    .error-container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      margin-bottom: 2rem;
+      animation: slideDown 0.6s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.25rem;
+    }
+
+    .logo p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      color: var(--text-light);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--dark-bg);
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .quick-link {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .quick-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+    }
+
+    .quick-link-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .quick-link h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .quick-link p {
+      font-size: 0.85rem;
+      margin: 0;
+      color: var(--text-light);
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .btn-group {
+        flex-direction: column;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="logo">
+      <h1>NEXALY</h1>
+      <p>Conseil Fiscal Automobile</p>
+    </div>
+
+    <div class="error-code" aria-label="Erreur 404">404</div>
+    
+    <h2>Page introuvable</h2>
+    <p>
+      Oups ! La page que vous recherchez semble avoir pris la route... sans GPS. 🚗💨<br>
+      Peut-être que ce lien n'existe plus ou qu'il y a une faute de frappe dans l'URL.
+    </p>
+
+    <div class="btn-group">
+      <a href="/" class="btn btn-primary">
+        🏠 Retour à l'accueil
+      </a>
+      <a href="/#contact" class="btn btn-secondary">
+        📧 Nous contacter
+      </a>
+    </div>
+
+    <div class="quick-links">
+      <a href="/#services" class="quick-link">
+        <span class="quick-link-icon">⚙️</span>
+        <h3>Nos Services</h3>
+        <p>Audit fiscal et optimisation</p>
+      </a>
+
+      <a href="/#blog" class="quick-link">
+        <span class="quick-link-icon">📰</span>
+        <h3>Blog</h3>
+        <p>Actualités et conseils</p>
+      </a>
+
+      <a href="/#faq" class="quick-link">
+        <span class="quick-link-icon">❓</span>
+        <h3>FAQ</h3>
+        <p>Questions fréquentes</p>
+      </a>
+    </div>
+
+    <div class="contact-info">
+      <p><strong>Besoin d'aide ?</strong></p>
+      <p>
+        📞 <a href="tel:+33744963660">07 44 96 36 60</a><br>
+        ✉️ <a href="mailto:contact@conseilfiscalauto.com">contact@conseilfiscalauto.com</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Animation au chargement
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('🚗 Page 404 Nexaly chargée');
+      
+      // Enregistrer l'erreur 404 dans les logs (optionnel)
+      if (window.location.pathname !== '/404' && window.location.pathname !== '/404.html') {
+        console.warn('404 Error:', window.location.href);
+      }
+    });
+
+    // Redirection automatique après 30 secondes (optionnel, désactivé par défaut)
+    // setTimeout(() => {
+    //   window.location.href = '/';
+    // }, 30000);
+  </script>
+</body>
+</html>

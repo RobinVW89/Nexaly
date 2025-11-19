@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects and rewrites
+
+# Rediriger toutes les pages 404 vers notre page 404 personnalisée
+/* /404.html 404

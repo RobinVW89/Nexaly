@@ -1369,6 +1369,25 @@
       align-self: flex-end;
     }
 
+    .chatbot-link {
+      color: var(--primary);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .chatbot-link:hover {
+      color: var(--accent);
+    }
+
+    .chat-message.bot .chatbot-link {
+      color: #00D4FF;
+    }
+
+    .chat-message.bot .chatbot-link:hover {
+      color: #00FFB3;
+    }
+
     #chatbot-input-container {
       padding: 16px;
       border-top: 1px solid rgba(0, 212, 255, 0.2);
@@ -1685,10 +1704,10 @@
 
 
         <div class="btn-group">
-          <button class="btn btn-primary" onclick="scrollToContact()">
+          <button class="btn btn-primary" onclick="scrollToContact()" aria-label="Demander un premier échange gratuit">
             Demander un premier échange
           </button>
-          <button class="btn btn-secondary" onclick="scrollToServices()">
+          <button class="btn btn-secondary" onclick="scrollToServices()" aria-label="Découvrir nos services d'accompagnement">
             Découvrir les services
           </button>
         </div>
@@ -1765,6 +1784,12 @@
       <div style="margin-top: 3rem; padding: 1rem 1.5rem; background: rgba(15, 58, 94, 0.05); border-radius: 8px; font-size: 0.9rem; color: var(--text-light);">
         <p style="margin: 0;"><strong>*ROI</strong> : Return On Investment (Retour sur Investissement) – Mesure de la rentabilité d'un investissement. Dans le contexte automobile professionnel, il s'agit du bénéfice net généré par rapport aux coûts totaux de possession et d'exploitation d'un véhicule.</p>
       </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">Des questions sur nos services ?</p>
+        <a href="#faq" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Voir la FAQ</a>
+        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Nous contacter</a>
+      </div>
     </section>
 
     <!-- SECTION BLOG -->
@@ -1839,6 +1864,12 @@
           </div>
         </article>
       </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">Ces articles vous ont aidé ? Allons plus loin ensemble !</p>
+        <a href="#services" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Voir nos services</a>
+        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Obtenir un audit personnalisé</a>
+      </div>
     </section>
 
     <!-- SECTION FAQ -->
@@ -1850,11 +1881,11 @@
 
       <div class="faq-container">
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
             <span>Quels types d'entreprises accompagnez-vous ?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
             <p>
               Nous accompagnons les TPE, PME, artisans, commerciaux, professions libérales et 
               dirigeants qui utilisent des véhicules dans le cadre de leur activité professionnelle. 
@@ -1864,11 +1895,11 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
             <span>Comment se déroule un premier rendez-vous ?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
             <p>
               Le premier échange est gratuit et dure environ 30 minutes. Nous analysons votre situation actuelle, 
               vos projets de renouvellement et identifions les opportunités d'optimisation. 
@@ -1878,11 +1909,11 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
             <span>Quelle est la différence entre LLD et LOA ?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
             <p>
               La <strong>LLD (Location Longue Durée)</strong> est une location pure sans option d'achat, 
               idéale pour maîtriser ses coûts et renouveler régulièrement. La <strong>LOA (Location avec Option d'Achat)</strong> 
@@ -1893,11 +1924,11 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
             <span>Faut-il privilégier l'électrique en 2025 ?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
             <p>
               Cela dépend de votre usage, kilométrage annuel et infrastructure de recharge. 
               L'électrique offre des avantages fiscaux importants (amortissements, TVS réduite) 
@@ -1908,11 +1939,11 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
             <span>Combien coûtent vos services ?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
             <p>
               Nos honoraires dépendent de la taille de votre parc et de la complexité de l'accompagnement. 
               Un audit simple peut démarrer à partir de quelques centaines d'euros, tandis qu'un accompagnement 
@@ -1923,11 +1954,11 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
             <span>Intervenez-vous partout en France ?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
             <p>
               Oui, nous intervenons sur toute la France. La plupart de nos échanges se font en visioconférence, 
               mais nous pouvons nous déplacer pour des audits terrain ou des réunions stratégiques 
@@ -1935,6 +1966,12 @@
             </p>
           </div>
         </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">Besoin de plus d'informations ?</p>
+        <a href="#blog" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Consulter le blog</a>
+        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Prendre rendez-vous</a>
       </div>
     </section>
 
@@ -2051,6 +2088,12 @@
           </a>
         </div>
       </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">Prêt à optimiser votre fiscalité automobile ?</p>
+        <a href="#services" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Découvrir nos services</a>
+        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Demander un audit</a>
+      </div>
     </section>
 
     <!-- SECTION CONTACT -->
@@ -2070,8 +2113,8 @@
 
           <div class="form-group">
             <label for="email">Adresse e-mail *</label>
-            <input type="email" id="email" name="email" required />
-            <div class="form-helper">
+            <input type="email" id="email" name="email" required aria-describedby="email-helper" />
+            <div class="form-helper" id="email-helper">
               Votre e-mail sera utilisé uniquement pour vous répondre.
             </div>
           </div>
@@ -2102,12 +2145,12 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+          <button type="submit" class="btn btn-primary" aria-label="Envoyer ma demande de contact">Envoyer ma demande</button>
 
-          <div class="success-message" id="success-message">
+          <div class="success-message" id="success-message" role="status" aria-live="polite">
             Merci ! Votre message a bien été envoyé. Nexaly vous recontactera rapidement.
           </div>
-          <div class="error-message" id="error-message">
+          <div class="error-message" id="error-message" role="alert" aria-live="assertive">
             Erreur lors de l'envoi. Veuillez réessayer.
           </div>
         </form>
@@ -2476,14 +2519,17 @@
         const faqItem = button.parentElement;
         const isActive = faqItem.classList.contains('active');
         
-        // Fermer tous les autres items
+        // Fermer tous les autres items et mettre à jour aria-expanded
         document.querySelectorAll('.faq-item').forEach(item => {
           item.classList.remove('active');
+          const btn = item.querySelector('.faq-question');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
         });
         
         // Ouvrir celui-ci si il n'était pas déjà ouvert
         if (!isActive) {
           faqItem.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
         }
       });
     });
@@ -2562,12 +2608,15 @@
       'flotte': 'Gestion de flotte : nous analysons chaque véhicule pour maximiser vos économies. De 3 à 100+ véhicules !',
       
       // Contact et RDV
-      'contact': 'Contactez Robin Soyer au 07 44 96 36 60, via le formulaire en bas de page ou par email à contact@conseilfiscalauto.com',
-      'rendez-vous': 'Prenez rendez-vous : appelez le 07 44 96 36 60 ou cliquez sur "📧 Prendre rendez-vous" en haut de page !',
-      'téléphone': 'Notre numéro : 07 44 96 36 60. Robin Soyer vous répond pour toutes vos questions sur la fiscalité automobile.',
-      'appel': 'Appelez Robin au 07 44 96 36 60 pour un échange personnalisé sur votre situation. Premier contact gratuit !',
-      'email': 'Envoyez-nous un email à contact@conseilfiscalauto.com ou utilisez le formulaire en bas de page.',
-      'robin': 'Robin Soyer est le fondateur de Nexaly, expert en fiscalité automobile. Appelez-le au 07 44 96 36 60 !',
+      'contact': 'Contactez Robin Soyer au 07 44 96 36 60, via le <a href="#contact" class="chatbot-link">formulaire de contact</a> ou par email à contact@conseilfiscalauto.com',
+      'rendez-vous': 'Prenez rendez-vous facilement : appelez le <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> ou <a href="#contact" class="chatbot-link">remplissez le formulaire</a> pour être rappelé !',
+      'rdv': 'Prenez rendez-vous facilement : appelez le <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> ou <a href="#contact" class="chatbot-link">remplissez le formulaire</a> pour être rappelé !',
+      'calendrier': 'Pour prendre rendez-vous, appelez le <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> ou <a href="#contact" class="chatbot-link">utilisez notre formulaire</a> en indiquant vos disponibilités !',
+      'rappel': 'Vous voulez être rappelé ? <a href="#contact" class="chatbot-link">Remplissez le formulaire de contact</a> avec vos coordonnées et disponibilités, nous vous rappelons sous 24h !',
+      'téléphone': 'Notre numéro : <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a>. Robin Soyer vous répond pour toutes vos questions sur la fiscalité automobile.',
+      'appel': 'Appelez Robin au <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> pour un échange personnalisé sur votre situation. Premier contact gratuit !',
+      'email': 'Envoyez-nous un email à <a href="mailto:contact@conseilfiscalauto.com" class="chatbot-link">contact@conseilfiscalauto.com</a> ou utilisez le <a href="#contact" class="chatbot-link">formulaire en bas de page</a>.',
+      'robin': 'Robin Soyer est le fondateur de Nexaly, expert en fiscalité automobile. Appelez-le au <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> !',
       'auxerre': 'Nexaly est basé à Auxerre (89) mais intervient partout en France. Appelez le 07 44 96 36 60 !',
       'où': 'Nous sommes basés à Auxerre mais intervenons dans toute la France. Appelez le 07 44 96 36 60 !',
       'horaire': 'Contactez-nous au 07 44 96 36 60 du lundi au vendredi. Nous vous rappelons rapidement !',
@@ -2634,7 +2683,7 @@
     function addMessage(text, sender) {
       const messageDiv = document.createElement('div');
       messageDiv.className = `chat-message ${sender}`;
-      messageDiv.textContent = text;
+      messageDiv.innerHTML = text; // Changé de textContent à innerHTML pour supporter les liens
       chatbotMessages.appendChild(messageDiv);
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
