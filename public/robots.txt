@@ -12,8 +12,9 @@ Allow: /mentions-legales.html
 Allow: /politique-confidentialite.html
 Allow: /politique-cookies.html
 
-# Disallow des fichiers systèmes
+# Disallow des fichiers systèmes et pages d'erreur
 Disallow: /sw.js
 Disallow: /worker-configuration.d.ts
 Disallow: /wrangler.json
-# Force redeploy
+Disallow: /404.html
+Disallow: /404
