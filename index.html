@@ -8,7 +8,7 @@
     name="description"
     content="Nexaly – Conseil, audit et optimisation de la fiscalité automobile pour professionnels : TPE, PME, artisans, commerciaux, professions libérales."
   />
-  <meta name="keywords" content="fiscalité automobile, TVS, taxe véhicules société, conseil fiscal auto, optimisation flotte automobile, LLD, LOA, location longue durée, amortissement véhicule, bonus écologique, véhicule électrique entreprise, parc automobile, audit fiscal, consultant automobile, TPE PME, professions libérales, artisans, commerciaux, fiscalité 2025, Nexaly" />
+  <meta name="keywords" content="fiscalité automobile, TVS, taxe véhicules société, conseil fiscal auto, optimisation flotte automobile, LLD, LOA, location longue durée, amortissement véhicule, prime coup de pouce, véhicule électrique entreprise, parc automobile, audit fiscal, consultant automobile, TPE PME, professions libérales, artisans, commerciaux, fiscalité 2026, Nexaly" />
   <meta name="author" content="Nexaly" />
   <meta name="robots" content="index, follow" />
   
@@ -675,39 +675,6 @@
       margin: 0;
     }
 
-    .blog-hero {
-      width: 100%;
-      height: 250px;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 3rem;
-      position: relative;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .blog-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .blog-hero-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(15, 58, 94, 0.9) 0%, transparent 100%);
-      padding: 2rem;
-      color: white;
-    }
-
-    .blog-hero-overlay h3 {
-      color: white;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -984,92 +951,6 @@
 
     #mobile-cta .cta-form:active {
       background: rgba(255, 255, 255, 0.3);
-    }
-
-    /* ====== TESTIMONIALS ====== */
-    #testimonials {
-      background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(15, 58, 94, 0.03) 100%);
-      padding: 3rem 0;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .testimonial-card {
-      background: var(--bg);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: 1rem;
-      left: 1.5rem;
-      font-size: 4rem;
-      color: var(--accent);
-      opacity: 0.2;
-      font-family: Georgia, serif;
-      line-height: 1;
-    }
-
-    .testimonial-stars {
-      color: #fbbf24;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial-text {
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .testimonial-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: white;
-      font-size: 1.2rem;
-    }
-
-    .testimonial-info h4 {
-      margin: 0;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-
-    .testimonial-info p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: var(--text-light);
     }
 
     /* ====== FOOTER ====== */
@@ -1692,7 +1573,7 @@
         <p class="lead">
           Nexaly accompagne les dirigeants, artisans, commerciaux et professions
           libérales dans l’optimisation de leurs coûts automobiles : choix des
-          véhicules, LLD/LOA, fiscalité 2025, stratégie 24/36/48 mois et
+          véhicules, LLD/LOA, fiscalité 2026, stratégie 24/36/48 mois et
           économies mesurables.
         </p>
 
@@ -1704,8 +1585,8 @@
 
 
         <div class="btn-group">
-          <button class="btn btn-primary" onclick="scrollToContact()" aria-label="Demander un premier échange gratuit">
-            Demander un premier échange
+          <button class="btn btn-primary" onclick="scrollToContact()" aria-label="Prendre rendez-vous">
+            Prendre rendez-vous
           </button>
           <button class="btn btn-secondary" onclick="scrollToServices()" aria-label="Découvrir nos services d'accompagnement">
             Découvrir les services
@@ -1737,7 +1618,6 @@
           <img src="public/brands/skoda-2.svg" alt="Skoda" class="brand-logo" />
         </div>
       </div>
-    </section>
     </section>
 
     <!-- SECTION SERVICES (RÉSUMÉ) -->
@@ -1787,8 +1667,7 @@
 
       <div style="margin-top: 2rem; text-align: center;">
         <p style="color: var(--text-light); margin-bottom: 1rem;">Des questions sur nos services ?</p>
-        <a href="#faq" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Voir la FAQ</a>
-        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Nous contacter</a>
+        <a href="#contact" class="cta-button" style="display: inline-block;">Prendre rendez-vous</a>
       </div>
     </section>
 
@@ -1799,6 +1678,72 @@
         Restez informé des dernières évolutions fiscales et découvrez nos conseils pour optimiser votre parc automobile.
       </p>
 
+      <div style="margin: 1.5rem 0 2rem; padding: 1.25rem 1.5rem; background: rgba(15, 58, 94, 0.05); border-left: 4px solid var(--accent); border-radius: 10px;">
+        <h3 style="margin-bottom: 0.6rem; color: var(--primary);">Nouveautés fiscales 2026 : ce qui change</h3>
+        <p style="margin-bottom: 0.6rem;">
+          La fiscalité auto 2026 impose une veille plus régulière : plusieurs règles évoluent selon les textes publiés et les caractéristiques du véhicule.
+        </p>
+        <p style="margin-bottom: 0.35rem;"><strong>Différences clés à vérifier :</strong></p>
+        <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-light);">
+          <li>Malus CO₂ : seuil de déclenchement abaissé à 108 g/km en 2026 (et 103 g/km annoncé pour 2027).</li>
+          <li>Malus masse : seuil abaissé à 1,5 tonne, avec cumul CO₂ + masse plafonné à 80 000 € en 2026.</li>
+          <li>Taxe annuelle polluants : hausse des catégories (cat. 1 à 130 € puis 160 € en 2027 ; cat. 2 à 650 € puis 800 € en 2027).</li>
+          <li>Aides : bascule vers la Prime coup de pouce / CEE selon conditions d'éligibilité (éco-score, prix, poids, profil ménage).</li>
+        </ul>
+        <p style="margin: 0.7rem 0 0; font-size: 0.85rem; color: var(--text-light);">
+          Source : guide interne « Fiscalité 2026 » (version du 13/02/2026). Vérification finale recommandée sur les textes officiels en vigueur.
+        </p>
+
+        <div style="margin-top: 0.9rem; overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; min-width: 520px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+            <thead>
+              <tr>
+                <th style="text-align: left; padding: 0.6rem 0.7rem; background: rgba(15, 58, 94, 0.08); color: var(--primary); border-bottom: 1px solid var(--border);">Point fiscal</th>
+                <th style="text-align: left; padding: 0.6rem 0.7rem; background: rgba(15, 58, 94, 0.08); color: var(--primary); border-bottom: 1px solid var(--border);">2025</th>
+                <th style="text-align: left; padding: 0.6rem 0.7rem; background: rgba(15, 58, 94, 0.08); color: var(--primary); border-bottom: 1px solid var(--border);">2026</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text);">Seuil malus CO₂</td>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text-light);">113 g/km</td>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text);">108 g/km</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text);">Seuil malus masse</td>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text-light);">1,6 t</td>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text);">1,5 t</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text);">Plafond cumul malus</td>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text-light);">70 000 €</td>
+                <td style="padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text);">80 000 €</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.55rem 0.7rem; color: var(--text);">Aide principale EV</td>
+                <td style="padding: 0.55rem 0.7rem; color: var(--text-light);">Bonus écologique</td>
+                <td style="padding: 0.55rem 0.7rem; color: var(--text);">Prime coup de pouce / CEE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin-top: 1rem;">
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem;">
+            <p style="margin: 0 0 0.3rem; font-size: 0.85rem; color: var(--text-light);">Avant</p>
+            <p style="margin: 0; font-size: 0.95rem;"><strong>Lecture annuelle des règles</strong></p>
+          </div>
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem;">
+            <p style="margin: 0 0 0.3rem; font-size: 0.85rem; color: var(--text-light);">En 2026</p>
+            <p style="margin: 0; font-size: 0.95rem;"><strong>Veille plus fréquente</strong> sur barèmes, aides et motorisations</p>
+          </div>
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem;">
+            <p style="margin: 0 0 0.3rem; font-size: 0.85rem; color: var(--text-light);">Impact concret</p>
+            <p style="margin: 0; font-size: 0.95rem;"><strong>Décision flotte plus pilotée</strong> (choix véhicule, financement, fiscalité)</p>
+          </div>
+        </div>
+      </div>
+
       <div class="blog-hero">
         <img 
           src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80" 
@@ -1806,7 +1751,7 @@
           loading="lazy"
         />
         <div class="blog-hero-overlay">
-          <h3>Fiscalité automobile 2025</h3>
+          <h3>Fiscalité automobile 2026</h3>
         </div>
       </div>
 
@@ -1814,45 +1759,47 @@
         <!-- Article 1 -->
         <article class="blog-card">
           <div class="blog-card-header">
-            <span class="blog-date">15 novembre 2025</span>
+            <span class="blog-date">3 mars 2026</span>
             <span class="blog-category">Fiscalité</span>
           </div>
-          <h3>TVS 2025 : Ce qui change pour votre entreprise</h3>
+          <h3>TVS 2026 : points de vigilance pour votre entreprise</h3>
           <p>
-            La Taxe sur les Véhicules de Société évolue encore en 2025. Découvrez les nouveaux barèmes CO₂, 
-            les véhicules exonérés et comment anticiper ces coûts dans votre budget automobile.
+            L'ex-TVS (taxes annuelles CO₂ + polluants) évolue avec des barèmes plus exigeants et des seuils plus bas.
+            Un recalibrage de flotte dès 2026 limite les surcoûts à l'immatriculation et en détention.
           </p>
           <div class="blog-tags">
             <span class="tag">TVS</span>
             <span class="tag">Réglementation</span>
           </div>
+          <a href="actualite-tvs-2026.html" class="resource-link" style="margin-top: 1rem;">Lire l'article →</a>
         </article>
 
         <!-- Article 2 -->
         <article class="blog-card">
           <div class="blog-card-header">
-            <span class="blog-date">8 novembre 2025</span>
+            <span class="blog-date">20 février 2026</span>
             <span class="blog-category">Stratégie</span>
           </div>
-          <h3>Électrique vs Hybride : Quel choix fiscal en 2025 ?</h3>
+          <h3>Électrique vs Hybride : quel choix fiscal en 2026 ?</h3>
           <p>
-            Entre amortissements déductibles, bonus écologique et coûts d'usage, quelle motorisation est réellement 
-            la plus avantageuse pour votre activité ? Analyse comparative avec exemples chiffrés.
+            Entre amortissements, fiscalité à l'usage et conditions d'aides, quelle motorisation est réellement
+            la plus avantageuse pour votre activité en 2026 ? Analyse comparative selon vos usages.
           </p>
           <div class="blog-tags">
             <span class="tag">Électrique</span>
             <span class="tag">Hybride</span>
             <span class="tag">ROI</span>
           </div>
+          <a href="electrique-vs-hybride-2026.html" class="resource-link" style="margin-top: 1rem;">Lire l'article →</a>
         </article>
 
         <!-- Article 3 -->
         <article class="blog-card">
           <div class="blog-card-header">
-            <span class="blog-date">1 novembre 2025</span>
+            <span class="blog-date">5 février 2026</span>
             <span class="blog-category">Optimisation</span>
           </div>
-          <h3>LLD ou LOA : 5 critères pour bien choisir</h3>
+          <h3>LLD ou LOA en 2026 : 5 critères pour bien choisir</h3>
           <p>
             Location Longue Durée ou Location avec Option d'Achat ? Au-delà des aspects financiers, 
             découvrez les implications fiscales, comptables et pratiques pour votre entreprise.
@@ -1862,116 +1809,13 @@
             <span class="tag">LOA</span>
             <span class="tag">Financement</span>
           </div>
+          <a href="lld-vs-loa-2026.html" class="resource-link" style="margin-top: 1rem;">Lire l'article →</a>
         </article>
       </div>
 
       <div style="margin-top: 2rem; text-align: center;">
         <p style="color: var(--text-light); margin-bottom: 1rem;">Ces articles vous ont aidé ? Allons plus loin ensemble !</p>
-        <a href="#services" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Voir nos services</a>
-        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Obtenir un audit personnalisé</a>
-      </div>
-    </section>
-
-    <!-- SECTION FAQ -->
-    <section id="faq">
-      <h2>Questions fréquentes</h2>
-      <p class="section-subtitle">
-        Retrouvez les réponses aux questions les plus courantes sur nos services et la fiscalité automobile.
-      </p>
-
-      <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
-            <span>Quels types d'entreprises accompagnez-vous ?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
-            <p>
-              Nous accompagnons les TPE, PME, artisans, commerciaux, professions libérales et 
-              dirigeants qui utilisent des véhicules dans le cadre de leur activité professionnelle. 
-              Que vous ayez 1 ou 50+ véhicules, nous adaptons nos conseils à votre situation.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
-            <span>Comment se déroule un premier rendez-vous ?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
-            <p>
-              Le premier échange est gratuit et dure environ 30 minutes. Nous analysons votre situation actuelle, 
-              vos projets de renouvellement et identifions les opportunités d'optimisation. 
-              Vous recevez ensuite une proposition d'accompagnement adaptée à vos besoins.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
-            <span>Quelle est la différence entre LLD et LOA ?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
-            <p>
-              La <strong>LLD (Location Longue Durée)</strong> est une location pure sans option d'achat, 
-              idéale pour maîtriser ses coûts et renouveler régulièrement. La <strong>LOA (Location avec Option d'Achat)</strong> 
-              vous permet de devenir propriétaire en fin de contrat. Chaque formule a des implications fiscales 
-              et comptables différentes que nous analysons ensemble.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
-            <span>Faut-il privilégier l'électrique en 2025 ?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
-            <p>
-              Cela dépend de votre usage, kilométrage annuel et infrastructure de recharge. 
-              L'électrique offre des avantages fiscaux importants (amortissements, TVS réduite) 
-              mais nécessite un investissement initial plus élevé. Nous réalisons une analyse 
-              comparative précise en fonction de votre situation réelle.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
-            <span>Combien coûtent vos services ?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
-            <p>
-              Nos honoraires dépendent de la taille de votre parc et de la complexité de l'accompagnement. 
-              Un audit simple peut démarrer à partir de quelques centaines d'euros, tandis qu'un accompagnement 
-              stratégique sur plusieurs années est facturé au forfait ou à la mission. 
-              Nous vous présentons toujours un devis clair avant toute intervention.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
-            <span>Intervenez-vous partout en France ?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
-            <p>
-              Oui, nous intervenons sur toute la France. La plupart de nos échanges se font en visioconférence, 
-              mais nous pouvons nous déplacer pour des audits terrain ou des réunions stratégiques 
-              si votre projet le nécessite.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top: 2rem; text-align: center;">
-        <p style="color: var(--text-light); margin-bottom: 1rem;">Besoin de plus d'informations ?</p>
-        <a href="#blog" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Consulter le blog</a>
-        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Prendre rendez-vous</a>
+        <a href="#contact" class="cta-button" style="display: inline-block;">Prendre rendez-vous</a>
       </div>
     </section>
 
@@ -2000,10 +1844,10 @@
 
         <div class="resource-card">
           <div class="resource-icon">📊</div>
-          <h3>Barème TVS 2025</h3>
+          <h3>Barème TVS 2026</h3>
           <p>
             Consultez les barèmes officiels de la Taxe sur les Véhicules de Société 
-            mis à jour pour l'année en cours sur le BOFiP.
+            mis à jour pour 2026 sur le BOFiP.
           </p>
           <a href="https://bofip.impots.gouv.fr/bofip/3425-PGP.html/identifiant%3DBOI-TFP-TVS-10-20-20190529" 
              target="_blank" 
@@ -2030,16 +1874,16 @@
 
         <div class="resource-card">
           <div class="resource-icon">🔋</div>
-          <h3>Bonus Écologique</h3>
+          <h3>Prime coup de pouce</h3>
           <p>
-            Montants et conditions du bonus écologique pour l'acquisition de véhicules 
-            peu polluants (électriques, hybrides rechargeables).
+            Consultez les conditions de la Prime coup de pouce pour l'achat d'un véhicule
+            particulier électrique et vérifiez votre éligibilité.
           </p>
-          <a href="https://www.ecologie.gouv.fr/bonus-ecologique" 
+          <a href="https://www.economie.gouv.fr/particuliers/voyager-et-se-deplacer/achat-dun-vehicule-electrique-pouvez-vous-beneficier-de-la-prime-coup-de-pouce-vehicules-particuliers-electriques#" 
              target="_blank" 
              rel="noopener noreferrer" 
              class="resource-link">
-            Voir les aides →
+            Voir la prime →
           </a>
         </div>
 
@@ -2087,12 +1931,23 @@
             Lire les actualités →
           </a>
         </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">📚</div>
+          <h3>Dossiers Nexaly 2026</h3>
+          <p>
+            Consultez nos analyses détaillées : TVS 2026, choix électrique vs hybride,
+            et critères LLD / LOA pour votre activité.
+          </p>
+          <p style="margin-bottom: 0.4rem;"><a href="actualite-tvs-2026.html" class="resource-link">TVS 2026 →</a></p>
+          <p style="margin-bottom: 0.4rem;"><a href="electrique-vs-hybride-2026.html" class="resource-link">Électrique vs Hybride 2026 →</a></p>
+          <p style="margin-bottom: 0;"><a href="lld-vs-loa-2026.html" class="resource-link">LLD vs LOA 2026 →</a></p>
+        </div>
       </div>
 
       <div style="margin-top: 2rem; text-align: center;">
         <p style="color: var(--text-light); margin-bottom: 1rem;">Prêt à optimiser votre fiscalité automobile ?</p>
-        <a href="#services" class="cta-button" style="display: inline-block; margin: 0 0.5rem;">Découvrir nos services</a>
-        <a href="#contact" class="cta-button" style="display: inline-block; margin: 0 0.5rem; background: linear-gradient(135deg, #00FFB3, #00D4FF);">Demander un audit</a>
+        <a href="#contact" class="cta-button" style="display: inline-block;">Prendre rendez-vous</a>
       </div>
     </section>
 
@@ -2170,6 +2025,165 @@
         </div>
       </div>
     </section>
+
+    <!-- SECTION FAQ -->
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+      <p class="section-subtitle">
+        Retrouvez les réponses aux questions les plus courantes sur nos services et la fiscalité automobile.
+      </p>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+            <span>Quels types d'entreprises accompagnez-vous ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+            <p>
+              Nous accompagnons les TPE, PME, artisans, commerciaux, professions libérales et 
+              dirigeants qui utilisent des véhicules dans le cadre de leur activité professionnelle. 
+              Que vous ayez 1 ou 50+ véhicules, nous adaptons nos conseils à votre situation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+            <span>Comment se déroule un premier rendez-vous ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+            <p>
+              Le premier échange est gratuit et dure environ 30 minutes. Nous analysons votre situation actuelle, 
+              vos projets de renouvellement et identifions les opportunités d'optimisation. 
+              Vous recevez ensuite une proposition d'accompagnement adaptée à vos besoins.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+            <span>Quelle est la différence entre LLD et LOA ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+            <p>
+              La <strong>LLD (Location Longue Durée)</strong> est une location pure sans option d'achat, 
+              idéale pour maîtriser ses coûts et renouveler régulièrement. La <strong>LOA (Location avec Option d'Achat)</strong> 
+              vous permet de devenir propriétaire en fin de contrat. Chaque formule a des implications fiscales 
+              et comptables différentes que nous analysons ensemble.
+              <a href="lld-vs-loa-2026.html">Lire notre dossier LLD vs LOA 2026</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+            <span>Faut-il privilégier l'électrique en 2026 ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+            <p>
+              Cela dépend de votre usage, kilométrage annuel et infrastructure de recharge. 
+              L'électrique offre des avantages fiscaux importants (amortissements, TVS réduite) 
+              mais nécessite un investissement initial plus élevé. Nous réalisons une analyse 
+              comparative précise en fonction de votre situation réelle.
+              <a href="electrique-vs-hybride-2026.html">Voir notre comparatif 2026</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+            <span>Combien coûtent vos services ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+            <p>
+              Nos honoraires dépendent de la taille de votre parc et de la complexité de l'accompagnement. 
+              Un audit simple peut démarrer à partir de quelques centaines d'euros, tandis qu'un accompagnement 
+              stratégique sur plusieurs années est facturé au forfait ou à la mission. 
+              Nous vous présentons toujours un devis clair avant toute intervention.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+            <span>Intervenez-vous partout en France ?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
+            <p>
+              Oui, nous intervenons sur toute la France. La plupart de nos échanges se font en visioconférence, 
+              mais nous pouvons nous déplacer pour des audits terrain ou des réunions stratégiques 
+              si votre projet le nécessite.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">Besoin de plus d'informations ?</p>
+        <a href="#contact" class="cta-button" style="display: inline-block;">Prendre rendez-vous</a>
+      </div>
+    </section>
+
+    <!-- ====== VEHICLE GALLERY SECTION ====== -->
+    <section id="vehicle-gallery">
+      <div class="gallery-container">
+        <h2>Nos Véhicules Recommandés 2026</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: var(--text); opacity: 0.8;">
+          Sélection de véhicules 100% électriques adaptés aux usages professionnels.
+        </p>
+        
+        <div class="gallery-slider">
+          <div class="gallery-slide">
+            <img src="public/vehicules/Volkswagen ID.3.png" alt="Volkswagen ID.3" loading="lazy">
+            <div class="gallery-slide-info">
+              <h3>Volkswagen ID.3</h3>
+              <p>Citadine électrique performante</p>
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <img src="public/vehicules/Volkswagen ID.5.png" alt="Volkswagen ID.5" loading="lazy">
+            <div class="gallery-slide-info">
+              <h3>Volkswagen ID.5</h3>
+              <p>SUV coupé électrique élégant</p>
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <img src="public/vehicules/Peugeot E-3008.png" alt="Peugeot E-3008" loading="lazy">
+            <div class="gallery-slide-info">
+              <h3>Peugeot E-3008</h3>
+              <p>SUV familial électrique connecté</p>
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <img src="public/vehicules/Cupra Borne.png.avif" alt="Cupra Born" loading="lazy">
+            <div class="gallery-slide-info">
+              <h3>Cupra Born</h3>
+              <p>Sportive électrique accessible</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-nav">
+          <button id="gallery-prev" aria-label="Précédent">‹</button>
+          <button id="gallery-next" aria-label="Suivant">›</button>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(0, 212, 255, 0.08); border-radius: 12px;">
+          <p style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600;">
+            💡 Les avantages fiscaux varient selon le modèle, l'usage et la réglementation en vigueur : une vérification personnalisée est recommandée avant décision.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ====== FOOTER ====== -->
@@ -2191,156 +2205,12 @@
         </p>
       </div>
       
-      <p>&copy; 2025 Nexaly. Tous droits réservés.</p>
+      <p>&copy; 2026 Nexaly. Tous droits réservés.</p>
       <p style="font-style: italic; color: var(--text-light); font-size: 0.95rem; margin-top: 0.5rem;">
         "⏰ Le seul mauvais moment pour optimiser, c'est demain."
       </p>
     </div>
   </footer>
-
-  <!-- ====== VEHICLE GALLERY SECTION ====== -->
-  <section id="vehicle-gallery">
-    <div class="gallery-container">
-      <h2>Nos Véhicules Recommandés 2025</h2>
-      <p style="text-align: center; margin-bottom: 40px; color: var(--text); opacity: 0.8;">
-        Véhicules 100% électriques • TVS : 0€ • Amortissement 100% en achat ou location
-      </p>
-      
-      <div class="gallery-slider">
-        <div class="gallery-slide">
-          <img src="public/vehicules/Volkswagen ID.3.png" alt="Volkswagen ID.3" loading="lazy">
-          <div class="gallery-slide-info">
-            <h3>Volkswagen ID.3</h3>
-            <p>✅ TVS : 0€ • ✅ Amortissement 100% • Citadine électrique performante</p>
-          </div>
-        </div>
-        
-        <div class="gallery-slide">
-          <img src="public/vehicules/Volkswagen ID.5.png" alt="Volkswagen ID.5" loading="lazy">
-          <div class="gallery-slide-info">
-            <h3>Volkswagen ID.5</h3>
-            <p>✅ TVS : 0€ • ✅ Amortissement 100% • SUV coupé électrique élégant</p>
-          </div>
-        </div>
-        
-        <div class="gallery-slide">
-          <img src="public/vehicules/Peugeot E-3008.png" alt="Peugeot E-3008" loading="lazy">
-          <div class="gallery-slide-info">
-            <h3>Peugeot E-3008</h3>
-            <p>✅ TVS : 0€ • ✅ Amortissement 100% • SUV familial électrique connecté</p>
-          </div>
-        </div>
-        
-        <div class="gallery-slide">
-          <img src="public/vehicules/Cupra Borne.png.avif" alt="Cupra Born" loading="lazy">
-          <div class="gallery-slide-info">
-            <h3>Cupra Born</h3>
-            <p>✅ TVS : 0€ • ✅ Amortissement 100% • Sportive électrique accessible</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="gallery-nav">
-        <button id="gallery-prev" aria-label="Précédent">‹</button>
-        <button id="gallery-next" aria-label="Suivant">›</button>
-      </div>
-      
-      <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(0, 212, 255, 0.08); border-radius: 12px;">
-        <p style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600;">
-          💡 Ces véhicules 100% électriques bénéficient d'une <strong>exonération totale de TVS</strong> et d'un <strong>amortissement jusqu'à 30 000€</strong>, que vous choisissiez l'achat ou la location (LLD/LOA).
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== TESTIMONIALS SECTION ====== -->
-  <section id="testimonials">
-    <div class="container">
-      <h2>🌟 Ils nous font confiance</h2>
-      <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">
-        Plus de 150 entreprises accompagnées depuis 2020
-      </p>
-      
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <p class="testimonial-text">
-            "Économie de 8 500€ sur ma flotte dès la première année. Robin a identifié des optimisations fiscales que mon expert-comptable avait manquées. Investissement rentabilisé en 2 semaines !"
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JD</div>
-            <div class="testimonial-info">
-              <h4>Jean Dupont</h4>
-              <p>TPE Bâtiment • 5 véhicules</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <p class="testimonial-text">
-            "Passage à l'électrique pour 3 véhicules commerciaux : TVS à 0€, amortissement complet, et mon image de marque s'est améliorée. Un conseil ultra-personnalisé et réactif."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SM</div>
-            <div class="testimonial-info">
-              <h4>Sophie Martin</h4>
-              <p>Agence immobilière • 3 véhicules</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <p class="testimonial-text">
-            "En tant qu'artisan, chaque euro compte. Robin m'a fait économiser 12 000€ sur 3 ans avec une LLD optimisée. Réponse en 24h, suivi impeccable, je recommande à 200% !"
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">PL</div>
-            <div class="testimonial-info">
-              <h4>Pierre Leroy</h4>
-              <p>Plombier-chauffagiste • 2 véhicules</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <p class="testimonial-text">
-            "Accompagnement de A à Z pour ma société de consulting. Comparaison LLD/LOA, négociation avec concessionnaires, et optimisation fiscale complète. Un vrai partenaire !"
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">AL</div>
-            <div class="testimonial-info">
-              <h4>Antoine Legrand</h4>
-              <p>Consultant IT • 1 véhicule premium</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <p class="testimonial-text">
-            "J'hésitais à investir dans un véhicule électrique. Robin m'a montré que c'était 15% moins cher qu'un thermique sur 5 ans grâce aux aides et à la fiscalité. Merci pour cette clarté !"
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MC</div>
-            <div class="testimonial-info">
-              <h4>Marie Caron</h4>
-              <p>Infirmière libérale • 1 véhicule</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 3rem;">
-        <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
-          📞 Réponse sous 24h • ✅ Premier contact sans engagement • 🎯 Analyse personnalisée
-        </p>
-        <a href="#contact" class="btn btn-primary" style="display: inline-block;">Demander une analyse</a>
-      </div>
-    </div>
-  </section>
 
   <!-- ====== MOBILE CTA STICKY ====== -->
   <div id="mobile-cta">
@@ -2351,7 +2221,7 @@
         </svg>
         Appeler
       </a>
-      <a href="#contact" class="cta-btn cta-form">Message</a>
+      <a href="#contact" class="cta-btn cta-form">Rendez-vous</a>
     </div>
   </div>
 
@@ -2551,22 +2421,22 @@
       'hey': 'Hey ! Que puis-je faire pour vous aujourd\'hui ?',
       
       // Prix et tarifs
-      'prix': 'Pour un devis personnalisé, contactez-nous au 07 44 96 36 60 ou via le formulaire. Nos tarifs dépendent de la taille de votre flotte et de vos besoins spécifiques.',
+      'prix': 'Pour un devis personnalisé, prenez rendez-vous au 07 44 96 36 60 ou via le formulaire. Nos tarifs dépendent de la taille de votre flotte et de vos besoins spécifiques.',
       'tarif': 'Nos tarifs sont personnalisés selon votre situation. Appelez-nous au 07 44 96 36 60 pour un devis gratuit !',
       'coût': 'Le coût dépend de votre parc automobile. Contactez Robin au 07 44 96 36 60 pour une estimation précise.',
       'combien': 'Pour connaître nos tarifs adaptés à votre entreprise, appelez le 07 44 96 36 60.',
       'devis': 'Je peux vous mettre en relation pour un devis gratuit ! Appelez le 07 44 96 36 60 ou remplissez le formulaire.',
-      'gratuit': 'Le premier échange et l\'audit initial sont gratuits ! Contactez-nous au 07 44 96 36 60.',
+      'gratuit': 'Le premier échange et l\'audit initial sont gratuits ! Prenez rendez-vous au 07 44 96 36 60.',
       
       // Location et financement
       'lld': 'La Location Longue Durée (LLD) offre des avantages fiscaux intéressants : loyers déductibles, pas d\'immobilisation au bilan, maintenance incluse. Consultez notre article de blog pour plus de détails !',
       'loa': 'La Location avec Option d\'Achat (LOA) peut être avantageuse selon votre situation : option d\'achat en fin de contrat, déduction des loyers. Voulez-vous un audit personnalisé ?',
       'leasing': 'Le leasing (LLD ou LOA) présente de nombreux avantages fiscaux pour les professionnels. Je peux vous en dire plus sur votre situation spécifique !',
       'crédit': 'Le crédit automobile professionnel permet d\'amortir le véhicule. Nous comparons toutes les solutions pour vous : crédit, LLD, LOA. Appelez-nous !',
-      'financement': 'Nous analysons toutes les options de financement : LLD, LOA, crédit, achat comptant. Chacune a ses avantages fiscaux. Contactez-nous pour un audit !',
+      'financement': 'Nous analysons toutes les options de financement : LLD, LOA, crédit, achat comptant. Chacune a ses avantages fiscaux. Prenez rendez-vous pour un audit personnalisé !',
       
       // TVS et fiscalité
-      'tvs': 'La TVS 2025 a évolué ! Les barèmes CO₂ sont plus stricts, mais les véhicules électriques restent exonérés. Consultez notre guide complet dans la section Blog.',
+      'tvs': 'En 2026, la fiscalité des véhicules d’entreprise continue d’évoluer. Vérifiez les barèmes officiels CO₂ et les exonérations applicables à votre flotte ; nous pouvons vous aider à les interpréter.',
       'taxe': 'La Taxe sur les Véhicules de Société (TVS) dépend des émissions CO₂ et de la puissance. Les véhicules électriques en sont exonérés. Besoin d\'un audit ?',
       'impôt': 'Les véhicules de société génèrent plusieurs impacts fiscaux : TVS, amortissement, déduction des charges. Nous optimisons tout ça pour vous !',
       'fiscalité': 'La fiscalité automobile est complexe : TVS, TVA récupérable, amortissement, avantage en nature... Je peux vous aider à optimiser tout ça !',
@@ -2574,13 +2444,13 @@
       'déduction': 'La déductibilité varie selon le carburant : 100% pour électrique/hydrogène, 80% pour essence/diesel, 50% pour GPL. Nous optimisons vos déductions !',
       
       // Véhicules électriques et hybrides
-      'électrique': 'Les véhicules électriques bénéficient d\'avantages fiscaux majeurs en 2025 : TVS à 0€, amortissement jusqu\'à 30 000€, bonus écologique jusqu\'à 7 000€ !',
+      'électrique': 'En 2026, les véhicules électriques restent généralement favorisés fiscalement. Les conditions exactes (plafonds, aides, exonérations) dépendent des textes en vigueur et de votre situation.',
       'hybride': 'Les hybrides rechargeables ont des avantages fiscaux selon leur autonomie électrique. Au-delà de 50km, la TVS est réduite. Voulez-vous en savoir plus ?',
       'ev': 'Les véhicules électriques (EV) sont exonérés de TVS et bénéficient d\'un amortissement plus avantageux. C\'est souvent le meilleur choix fiscal !',
       'tesla': 'Tesla propose d\'excellents modèles pour les professionnels : Model 3, Model Y. Tous bénéficient des avantages fiscaux électriques. Audit ?',
       'autonomie': 'L\'autonomie est cruciale pour les professionnels. Nous analysons vos trajets pour trouver le véhicule électrique optimal pour votre usage.',
       'recharge': 'La recharge est un critère important. Nous vous conseillons sur les bornes et l\'infrastructure adaptée à vos besoins professionnels.',
-      'bonus': 'Le bonus écologique 2025 peut atteindre 7 000€ pour les véhicules électriques neufs sous conditions. Nous vous aidons à en bénéficier !',
+      'bonus': 'En 2026, la Prime coup de pouce dépend de critères d’éligibilité et de barèmes actualisés. Nous vérifions avec vous les conditions applicables à votre projet.',
       
       // Marques automobiles
       'audi': 'Audi propose d\'excellents modèles électriques comme l\'e-tron et le Q4 e-tron, parfaits pour les professionnels. Besoin d\'une analyse fiscale ?',
@@ -2594,21 +2464,21 @@
       // Services Nexaly
       'service': 'Nous proposons : Audit fiscal de votre parc, Plan stratégique 24/36/48 mois, Accompagnement négociations, Optimisation TVS. Que vous intéresse ?',
       'audit': 'Notre audit analyse vos véhicules actuels, contrats, fiscalité et vous propose des économies concrètes. Premier échange gratuit au 07 44 96 36 60 !',
-      'conseil': 'Nexaly vous conseille sur tous les aspects : choix véhicules, financement, fiscalité, négociation avec loueurs. Appelez-nous !',
+      'conseil': 'Nexaly vous conseille sur tous les aspects : choix véhicules, financement, fiscalité, négociation avec loueurs. Prenez rendez-vous et on cadre tout ensemble.',
       'optimisation': 'Nous optimisons votre fiscalité automobile : TVS, amortissements, choix de véhicules, durée de contrats. Économies garanties !',
       'accompagnement': 'Nous vous accompagnons de A à Z : audit, stratégie, négociation, mise en place. Un seul interlocuteur pour tout gérer !',
       'économie': 'Nos clients économisent en moyenne 15-30% sur leurs coûts automobiles. Vous voulez savoir combien vous pourriez économiser ?',
       
       // Types d\'entreprises
-      'tpe': 'Nexaly accompagne les TPE dès 1 véhicule ! Nous adaptons nos services à votre taille. Contactez-nous au 07 44 96 36 60.',
-      'pme': 'Nous aidons de nombreuses PME à optimiser leur parc automobile. Chaque véhicule compte ! Contactez-nous pour une analyse personnalisée.',
+      'tpe': 'Nexaly accompagne les TPE dès 1 véhicule ! Nous adaptons nos services à votre taille. Prenez rendez-vous au 07 44 96 36 60.',
+      'pme': 'Nous aidons de nombreuses PME à optimiser leur parc automobile. Chaque véhicule compte ! Prenez rendez-vous pour une analyse personnalisée.',
       'artisan': 'Artisans, nous savons que chaque euro compte. Optimisons vos utilitaires et véhicules de service. Appelez-nous !',
       'commercial': 'Commerciaux, votre véhicule est votre outil de travail. Optimisons-le fiscalement ! 07 44 96 36 60.',
       'profession libérale': 'Professions libérales : médecins, avocats, experts-comptables... nous optimisons votre véhicule professionnel !',
       'flotte': 'Gestion de flotte : nous analysons chaque véhicule pour maximiser vos économies. De 3 à 100+ véhicules !',
       
       // Contact et RDV
-      'contact': 'Contactez Robin Soyer au 07 44 96 36 60, via le <a href="#contact" class="chatbot-link">formulaire de contact</a> ou par email à contact@conseilfiscalauto.com',
+      'contact': 'Prenez rendez-vous avec Robin Soyer au 07 44 96 36 60, via le <a href="#contact" class="chatbot-link">formulaire</a> ou par email à contact@conseilfiscalauto.com',
       'rendez-vous': 'Prenez rendez-vous facilement : appelez le <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> ou <a href="#contact" class="chatbot-link">remplissez le formulaire</a> pour être rappelé !',
       'rdv': 'Prenez rendez-vous facilement : appelez le <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> ou <a href="#contact" class="chatbot-link">remplissez le formulaire</a> pour être rappelé !',
       'calendrier': 'Pour prendre rendez-vous, appelez le <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> ou <a href="#contact" class="chatbot-link">utilisez notre formulaire</a> en indiquant vos disponibilités !',
@@ -2619,11 +2489,11 @@
       'robin': 'Robin Soyer est le fondateur de Nexaly, expert en fiscalité automobile. Appelez-le au <a href="tel:+33744963660" class="chatbot-link">07 44 96 36 60</a> !',
       'auxerre': 'Nexaly est basé à Auxerre (89) mais intervient partout en France. Appelez le 07 44 96 36 60 !',
       'où': 'Nous sommes basés à Auxerre mais intervenons dans toute la France. Appelez le 07 44 96 36 60 !',
-      'horaire': 'Contactez-nous au 07 44 96 36 60 du lundi au vendredi. Nous vous rappelons rapidement !',
+      'horaire': 'Prenez rendez-vous au 07 44 96 36 60 du lundi au vendredi. Nous vous rappelons rapidement !',
       
       // Délais et process
       'délai': 'Un audit prend généralement 2-3 jours. Le premier échange est immédiat ! Appelez le 07 44 96 36 60.',
-      'rapide': 'Oui, nous travaillons vite ! Premier échange sous 24h, audit sous 3 jours. Contactez-nous !',
+      'rapide': 'Oui, nous travaillons vite ! Premier échange sous 24h, audit sous 3 jours. Prenez rendez-vous !',
       'urgence': 'Besoin urgent ? Appelez directement Robin au 07 44 96 36 60 pour un traitement prioritaire.',
       'combien de temps': 'Comptez 2-3 jours pour un audit complet. Le premier contact est immédiat ! 07 44 96 36 60.',
       
@@ -2634,19 +2504,19 @@
       'top': 'Ravi de vous aider ! 👍',
       
       // Au revoir
-      'au revoir': 'Au revoir ! N\'hésitez pas à nous contacter au 07 44 96 36 60. À bientôt !',
-      'bye': 'À bientôt ! Contactez-nous quand vous voulez au 07 44 96 36 60 ! 👋',
+      'au revoir': 'Au revoir ! N\'hésitez pas à prendre rendez-vous au 07 44 96 36 60. À bientôt !',
+      'bye': 'À bientôt ! Prenez rendez-vous quand vous voulez au 07 44 96 36 60 ! 👋',
       'ciao': 'Ciao ! Robin vous attend au 07 44 96 36 60 pour optimiser votre fiscalité auto !',
       
       // ROI
       'roi': 'Le ROI (Retour sur Investissement) mesure la rentabilité. Nous calculons le ROI de chaque véhicule pour optimiser vos choix !',
       'rentabilité': 'Nous analysons la rentabilité totale : coût d\'achat/location, fiscalité, maintenance, revente. Vision sur 24/36/48 mois !',
-      'économies': 'Nos clients économisent 15-30% en moyenne sur leurs coûts auto. Et vous, combien pourriez-vous économiser ? Contactez-nous pour le découvrir.',
+      'économies': 'Nos clients économisent 15-30% en moyenne sur leurs coûts auto. Et vous, combien pourriez-vous économiser ? Prenez rendez-vous pour le découvrir.',
       
       // Aide et navigation
-      'aide': 'Je peux vous renseigner sur : LLD/LOA, TVS 2025, véhicules électriques, nos services, tarifs, ou prendre rendez-vous. Que souhaitez-vous savoir ?',
+      'aide': 'Je peux vous renseigner sur : LLD/LOA, TVS 2026, véhicules électriques, nos services, tarifs, ou prendre rendez-vous. Que souhaitez-vous savoir ?',
       'menu': 'Voici les sujets principaux : Fiscalité (TVS, amortissement), Financement (LLD/LOA), Véhicules électriques, Nos services, Contact. Que vous intéresse ?',
-      'blog': 'Consultez notre section Blog en haut de page pour des articles détaillés sur la TVS 2025, LLD vs LOA, électrique vs hybride !',
+      'blog': 'Consultez notre section Blog en haut de page pour des articles détaillés sur la TVS 2026, LLD vs LOA, électrique vs hybride !',
       
       // Défaut
       'default': 'Je ne suis pas sûr de comprendre. Essayez : "TVS", "électrique", "LLD", "tarifs", "audit", "rendez-vous" ou tapez "aide" pour voir tous les sujets !'

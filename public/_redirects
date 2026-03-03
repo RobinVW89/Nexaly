@@ -1,4 +1,9 @@
 # Cloudflare Pages redirects and rewrites
 
+# Bloquer l'accès aux dossiers/fichiers internes
+/Guide* /404.html 404
+/guide-fiscalite-2026* /404.html 404
+/guide-de-la-fiscalite-2026* /404.html 404
+
 # Rediriger toutes les pages 404 vers notre page 404 personnalisée
 /* /404.html 404

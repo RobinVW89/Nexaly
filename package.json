@@ -2,5 +2,8 @@
   "name": "nexaly-site",
   "description": "Site web Nexaly - Conseil Fiscal Automobile",
   "private": true,
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build-pages.mjs"
+  }
 }

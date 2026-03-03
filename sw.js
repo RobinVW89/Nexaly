@@ -1,7 +1,7 @@
 // Service Worker pour Nexaly - Cache offline optimisé
-const CACHE_NAME = 'nexaly-v2';
-const STATIC_CACHE = 'nexaly-static-v2';
-const DYNAMIC_CACHE = 'nexaly-dynamic-v2';
+const CACHE_NAME = 'nexaly-v3';
+const STATIC_CACHE = 'nexaly-static-v3';
+const DYNAMIC_CACHE = 'nexaly-dynamic-v3';
 
 // Assets statiques à mettre en cache immédiatement
 const staticAssets = [

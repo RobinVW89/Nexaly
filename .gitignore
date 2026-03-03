@@ -198,5 +198,11 @@ dist
 .dev.vars*
 !.dev.vars.example
 
+# Internal fiscal working files (do not publish)
+Guide fiscale 02/
+Nos Véhicules Recommandés 2025/
+guide-fiscalite-2026*
+guide-de-la-fiscalite-2026*
+
 ### Astro ###
 .astro/
